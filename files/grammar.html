@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Template</title>
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', '微軟正黑體', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #34495e;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        h4 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th {
+            background: linear-gradient(90deg, #34495e, #2c3e50);
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+        .japanese {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .chinese {
+            color: #27ae60;
+        }
+        .example {
+            background-color: #fff3cd;
+            padding: 6px;
+            border-radius: 4px;
+            margin: 3px 0;
+            border-left: 4px solid #ffc107;
+            font-size: 12px;
+        }
+        .note {
+            background-color: #d1ecf1;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #17a2b8;
+        }
+        .grammar-point {
+            background-color: #e8f5e8;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 5px 0;
+            border-left: 4px solid #28a745;
+        }
+        .highlight {
+            background-color: #fff2e6;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        blockquote {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #f1f2f6;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        code {
+            background-color: #f1f2f6;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+        }
+        pre {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ddd, transparent);
+            margin: 30px 0;
+        }
+        p {
+            margin: 15px 0;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        em {
+            color: #7f8c8d;
+        }
+    </style>
+
+    <title>Document Template</title>
+    
+    <style>
+
+        body {
+            font-family: 'Microsoft JhengHei', '微軟正黑體', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #34495e;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        h4 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th {
+            background: linear-gradient(90deg, #34495e, #2c3e50);
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+        .japanese {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .chinese {
+            color: #27ae60;
+        }
+        .example {
+            background-color: #fff3cd;
+            padding: 6px;
+            border-radius: 4px;
+            margin: 3px 0;
+            border-left: 4px solid #ffc107;
+            font-size: 12px;
+        }
+        .note {
+            background-color: #d1ecf1;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #17a2b8;
+        }
+        .grammar-point {
+            background-color: #e8f5e8;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 5px 0;
+            border-left: 4px solid #28a745;
+        }
+        .highlight {
+            background-color: #fff2e6;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        blockquote {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #f1f2f6;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        code {
+            background-color: #f1f2f6;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+        }
+        pre {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ddd, transparent);
+            margin: 30px 0;
+        }
+        p {
+            margin: 15px 0;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        em {
+            color: #7f8c8d;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>日本語文法精要：完整整理表</h1>
+<p>這系列課程中的核心日語文法概念，涵蓋動詞與形容詞的分類、各種變化形式，以及普通體與丁寧體的區別。</p>
+<hr>
+<h2>1. 動詞分類</h2>
+<table>
+        <thead><tr>
+<th>類別</th>
+<th>特徵</th>
+<th>變化類型</th>
+<th>範例動詞</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td><span class="japanese">第一類</span></td>
+<td>以**「う」段音<span class="japanese">結尾。動詞詞幹會隨活用變化。以「る」結尾時，「る」前的假名來自</span>[a], [u], [o]行**</td>
+<td>五段動詞</td>
+<td><span class="japanese">行く (いく)</span> - 去<br><span class="japanese">書く (かく)</span> - 寫<br><span class="japanese">泳ぐ (およぐ)</span> - 游泳</td>
+</tr>
+<tr>
+<td><span class="japanese">第二類</span></td>
+<td>總是以**「る」結尾**。「る」前的假名來自**[i]行或[e]行**。詞幹保持不變</td>
+<td>上一段動詞・下一段動詞</td>
+<td><span class="japanese">見る (みる)</span> - 看<br><span class="japanese">食べる (たべる)</span> - 吃<br><span class="japanese">起きる (おきる)</span> - 起床</td>
+</tr>
+<tr>
+<td><span class="japanese">第三類</span></td>
+<td><span class="japanese">不規則動詞</span>群。變化模式獨特</td>
+<td>カ行変格・サ行変格</td>
+<td><span class="japanese">来る (くる)</span> - 來<br><span class="japanese">する</span> - 做<br><span class="japanese">勉強する (べんきょうする)</span> - 學習</td>
+</tr>
+</tbody>
+      </table><h3>例句</h3>
+<ul>
+<li><span class="japanese">100メートル泳ぐ (ひゃくメートルおよぐ)</span> - 游100公尺</li>
+<li><span class="japanese">急ぐ (いそぐ)</span> - 趕快 → <span class="japanese">急いでください (いそいでください)</span> - 請趕快</li>
+<li><span class="japanese">刺身 (さしみ) を食べる</span> - 吃生魚片 → <span class="japanese">刺身 (さしみ) が食べられる</span> - 能吃生魚片</li>
+<li><span class="japanese">ここへ来てください (きてください)</span> - 請來這裡</li>
+<li><span class="japanese">よく勉強してください (べんきょうしてください)</span> - 請好好學習</li>
+</ul>
+<hr>
+<h2>2. 形容詞分類</h2>
+<table>
+        <thead><tr>
+<th>類別</th>
+<th>特徵</th>
+<th>範例</th>
+<th>修飾名詞方式</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td><span class="japanese">い形容詞</span></td>
+<td>總是以**「い」結尾**</td>
+<td><span class="japanese">おいしい</span> - 美味的<br><span class="japanese">高い (たかい)</span> - 高的<br><span class="japanese">暑い (あつい)</span> - 熱的</td>
+<td><span class="japanese">直接修飾名詞</span><br>例：<span class="japanese">おいしいラーメン</span></td>
+</tr>
+<tr>
+<td><span class="japanese">な形容詞</span></td>
+<td>修飾名詞時<span class="japanese">需要加「な」</span></td>
+<td><span class="japanese">便利 (べんり)</span> - 方便的<br><span class="japanese">元気 (げんき)</span> - 健康的<br><span class="japanese">きれい</span> - 漂亮的</td>
+<td><span class="japanese">需加「な」修飾名詞</span><br>例：<span class="japanese">便利 (べんり) な町 (まち)</span></td>
+</tr>
+</tbody>
+      </table><h3>例句</h3>
+<ul>
+<li><span class="japanese">その店 (みせ) は高くて (たかくて)、まずいです</span> - 那家店又貴又難吃</li>
+<li><span class="japanese">あの図書館 (としょかん) は本 (ほん) が少ない (すくない) です</span> - 那個圖書館書很少</li>
+<li><span class="japanese">富士山 (ふじさん) はきれいで、有名 (ゆうめい) です</span> - 富士山很漂亮，也很有名</li>
+<li><span class="japanese">自由 (じゆう) に服 (ふく) を選んで (えらんで) もいいです</span> - 可以自由選擇服裝</li>
+</ul>
+<hr>
+<h2>3. 動詞基本變化形 - 六大活用形</h2>
+<table>
+        <thead><tr>
+<th>變化形</th>
+<th>用途</th>
+<th>第一類動詞</th>
+<th>第二類動詞</th>
+<th>第三類動詞</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td><span class="japanese">未然形</span></td>
+<td>否定形・意志形</td>
+<td><span class="japanese">行か (いか)</span></td>
+<td><span class="japanese">見 (み)</span></td>
+<td><span class="japanese">こ / し</span></td>
+</tr>
+<tr>
+<td><span class="japanese">連用形</span></td>
+<td>ます形</td>
+<td><span class="japanese">行き (いき)</span></td>
+<td><span class="japanese">見 (み)</span></td>
+<td><span class="japanese">き / し</span></td>
+</tr>
+<tr>
+<td><span class="japanese">終止形</span></td>
+<td>辭書形</td>
+<td><span class="japanese">行く (いく)</span></td>
+<td><span class="japanese">見る (みる)</span></td>
+<td><span class="japanese">来る (くる) / する</span></td>
+</tr>
+<tr>
+<td><span class="japanese">連体形</span></td>
+<td>修飾名詞</td>
+<td><span class="japanese">行く (いく) 人 (ひと)</span></td>
+<td><span class="japanese">見る (みる) 人 (ひと)</span></td>
+<td><span class="japanese">来る (くる) 人 (ひと)</span></td>
+</tr>
+<tr>
+<td><span class="japanese">仮定形</span></td>
+<td>條件形（ば）</td>
+<td><span class="japanese">行け (いけ) ば</span></td>
+<td><span class="japanese">見れ (みれ) ば</span></td>
+<td><span class="japanese">くれば / すれば</span></td>
+</tr>
+<tr>
+<td><span class="japanese">命令形</span></td>
+<td>命令</td>
+<td><span class="japanese">行け (いけ)</span></td>
+<td><span class="japanese">見ろ (みろ)</span></td>
+<td><span class="japanese">こい / しろ</span></td>
+</tr>
+</tbody>
+      </table><hr>
+<h2>4. 普通體與丁寧體</h2>
+<table>
+        <thead><tr>
+<th>詞性</th>
+<th>時態</th>
+<th>肯定/否定</th>
+<th>丁寧體</th>
+<th>普通體</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td><span class="japanese">名詞</span></td>
+<td>非過去形</td>
+<td>肯定</td>
+<td><span class="japanese">学校 (がっこう) です</span></td>
+<td><span class="japanese">学校 (がっこう) だ</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>否定</td>
+<td><span class="japanese">学校 (がっこう) ではありません</span></td>
+<td><span class="japanese">学校 (がっこう) ではない</span></td>
+</tr>
+<tr>
+<td></td>
+<td>過去形</td>
+<td>肯定</td>
+<td><span class="japanese">学校 (がっこう) でした</span></td>
+<td><span class="japanese">学校 (がっこう) だった</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>否定</td>
+<td><span class="japanese">学校 (がっこう) ではありませんでした</span></td>
+<td><span class="japanese">学校 (がっこう) ではなかった</span></td>
+</tr>
+<tr>
+<td><span class="japanese">い形容詞</span></td>
+<td>非過去形</td>
+<td>肯定</td>
+<td><span class="japanese">高い (たかい) です</span></td>
+<td><span class="japanese">高い (たかい)</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>否定</td>
+<td><span class="japanese">高く (たかく) ありません</span></td>
+<td><span class="japanese">高く (たかく) ない</span></td>
+</tr>
+<tr>
+<td></td>
+<td>過去形</td>
+<td>肯定</td>
+<td><span class="japanese">高かった (たかかった) です</span></td>
+<td><span class="japanese">高かった (たかかった)</span></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>否定</td>
+<td><span class="japanese">高く (たかく) ありませんでした</span></td>
+<td><span class="japanese">高く (たかく) なかった</span></td>
+</tr>
+</tbody>
+      </table><hr>
+<h2>5. て形變化</h2>
+<h3>名詞・形容詞</h3>
+<table>
+        <thead><tr>
+<th>詞性</th>
+<th>變化規則</th>
+<th>例句</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td><span class="japanese">名詞</span></td>
+<td>連接「で」</td>
+<td><span class="japanese">Aさんは台湾人 (たいわんじん) で、25歳 (にじゅうごさい) で、会社員 (かいしゃいん) です</span> - A先生是台灣人，25歲，是公司職員</td>
+</tr>
+<tr>
+<td><span class="japanese">な形容詞</span></td>
+<td>連接「で」</td>
+<td><span class="japanese">富士山 (ふじさん) はきれいで、有名 (ゆうめい) です</span> - 富士山很漂亮，也很有名</td>
+</tr>
+<tr>
+<td><span class="japanese">い形容詞</span></td>
+<td>「い」改為「くて」</td>
+<td><span class="japanese">その店 (みせ) は高くて (たかくて)、まずいです</span> - 那家店又貴又難吃</td>
+</tr>
+</tbody>
+      </table><h3>動詞て形變化</h3>
+<h4>第一類動詞（音便變化）</h4>
+<table>
+        <thead><tr>
+<th>結尾</th>
+<th>變化</th>
+<th>例句</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td><span class="japanese">く</span></td>
+<td>→ <span class="japanese">いて</span></td>
+<td><span class="japanese">書く (かく) → 書いて (かいて)</span></td>
+</tr>
+<tr>
+<td><span class="japanese">ぐ</span></td>
+<td>→ <span class="japanese">いで</span></td>
+<td><span class="japanese">泳ぐ (およぐ) → 泳いで (およいで)</span></td>
+</tr>
+<tr>
+<td><span class="japanese">う, つ, る</span></td>
+<td>→ <span class="japanese">って</span></td>
+<td><span class="japanese">買う (かう) → 買って (かって)</span><br><span class="japanese">待つ (まつ) → 待って (まって)</span></td>
+</tr>
+<tr>
+<td><span class="japanese">ぶ, ぬ, む</span></td>
+<td>→ <span class="japanese">んで</span></td>
+<td><span class="japanese">呼ぶ (よぶ) → 呼んで (よんで)</span><br><span class="japanese">読む (よむ) → 読んで (よんで)</span></td>
+</tr>
+<tr>
+<td><span class="japanese">す</span></td>
+<td>→ <span class="japanese">して</span></td>
+<td><span class="japanese">話す (はなす) → 話して (はなして)</span></td>
+</tr>
+</tbody>
+      </table><p><span class="japanese">例外：</span> <span class="japanese">行く (いく) → 行って (いって)</span></p>
+<h4>第二類・第三類動詞</h4>
+<table>
+        <thead><tr>
+<th>類別</th>
+<th>變化規則</th>
+<th>例句</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td><span class="japanese">第二類</span></td>
+<td>「る」改為「て」</td>
+<td><span class="japanese">見る (みる) → 見て (みて)</span><br><span class="japanese">食べる (たべる) → 食べて (たべて)</span></td>
+</tr>
+<tr>
+<td><span class="japanese">第三類</span></td>
+<td>不規則變化</td>
+<td><span class="japanese">来る (くる) → 来て (きて)</span><br><span class="japanese">する → して</span></td>
+</tr>
+</tbody>
+      </table><h3>て形接續例句</h3>
+<ul>
+<li><span class="japanese">朝五時 (あさごじ) に起きて (おきて)、埼玉 (さいたま) まで車 (くるま) で行って (いって)、八時 (はちじ) から授業 (じゅぎょう) を受けて (うけて)、夕方 (ゆうがた) 東京 (とうきょう) に戻りました (もどりました)</span> - 早上五點起床，開車到埼玉，從八點開始上課，傍晚回東京</li>
+</ul>
+<hr>
+<h2>6. 基本請求表現</h2>
+<h3>〜てください（禮貌的請求）</h3>
+<ul>
+<li><span class="japanese">見て (みて) ください</span> - 請看</li>
+<li><span class="japanese">聞いて (きいて) ください</span> - 請聽</li>
+<li><span class="japanese">話して (はなして) ください</span> - 請說</li>
+<li><span class="japanese">出して (だして) ください</span> - 請拿出來</li>
+<li><span class="japanese">開けて (あけて) ください</span> - 請打開</li>
+<li><span class="japanese">閉めて (しめて) ください</span> - 請關上</li>
+<li><span class="japanese">消して (けして) ください</span> - 請關掉/熄滅</li>
+</ul>
+<h3>〜ないでください（請求不要做）</h3>
+<ul>
+<li><span class="japanese">写真 (しゃしん) を撮らない (とらない) でください</span> - 請不要拍照</li>
+<li><span class="japanese">書かない (かかない) でください</span> - 請不要寫</li>
+</ul>
+<hr>
+<h2>7. ている形用法</h2>
+<h3>進行動作</h3>
+<p><span class="japanese">表示正在進行的動作（持續性動詞）</span></p>
+<ul>
+<li><span class="japanese">彼 (かれ) は居酒屋 (いざかや) でお酒 (さけ) を飲んでいます (のんでいます)</span> - 他正在居酒屋喝酒</li>
+<li><span class="japanese">お母さん (おかあさん) は掃除 (そうじ) しています</span> - 媽媽正在打掃</li>
+<li><span class="japanese">おばあさんはテレビを見ています (みています)</span> - 奶奶正在看電視</li>
+</ul>
+<h3>習慣・状態</h3>
+<p><span class="japanese">表示習慣性動作或長期狀態（狀態性動詞）</span></p>
+<ul>
+<li><span class="japanese">姉 (あね) は大学 (だいがく) で英語 (えいご) を教えています (おしえています)</span> - 姊姊在大學教英文</li>
+<li><span class="japanese">富士山 (ふじさん) の近く (ちかく) のキャンプ場 (じょう) に何度 (なんど) か行っています (いっています)</span> - 去過富士山附近的露營場好幾次</li>
+<li><span class="japanese">AIは毎日 (まいにち) 使っています (つかっています)</span> - 每天都在使用AI</li>
+<li><span class="japanese">日曜日 (にちようび) に、一日中 (いちにちじゅう) 家 (いえ) でゴロゴロしていました</span> - 星期日整天在家懶洋洋地度過</li>
+</ul>
+<h3>結果状態</h3>
+<p><span class="japanese">瞬間動詞+ている表示動作完成後的狀態</span></p>
+<ul>
+<li><span class="japanese">パソコンが壊れています (こわれています)</span> - 電腦壞了（處於壞掉的狀態）</li>
+<li><span class="japanese">エアコンがついています</span> - 空調開著</li>
+<li><span class="japanese">ペンが落ちています (おちています)</span> - 筆掉在地上了</li>
+<li><span class="japanese">ゴキブリが死んでいます (しんでいます)</span> - 蟑螂死掉了</li>
+<li><span class="japanese">かばんが開いています (あいています)</span> - 背包開著</li>
+<li><span class="japanese">鍵 (かぎ) がかかっています</span> - 門鎖鎖住了</li>
+</ul>
+<h3>否定用法</h3>
+<p><span class="japanese">ていません表示狀態，ませんでした表示事實</span></p>
+<ul>
+<li><span class="japanese">電話 (でんわ) はしていません</span> - 我沒有打電話（狀態）</li>
+<li><span class="japanese">電話 (でんわ) はしませんでした</span> - 沒有打電話（事實）</li>
+<li><span class="japanese">まだ食べていません (たべていません)</span> - 還沒吃（此時此刻是沒有吃的狀態）</li>
+<li><span class="japanese">また食べません (たべません)</span> - 還沒有要吃（等一下才要吃）</li>
+</ul>
+<h3>長期状態動詞</h3>
+<p><span class="japanese">住む、勤める、知る等必須用ている形</span></p>
+<ul>
+<li><span class="japanese">姉 (あね) は会社 (かいしゃ) に勤めています (つとめています)</span> - 姊姊在公司工作（正職/長期）</li>
+<li><span class="japanese">東京 (とうきょう) に住んでいます (すんでいます)</span> - 住在東京</li>
+<li><span class="japanese">田中 (たなか) さんのことを知っています (しっています)</span> - 認識田中先生</li>
+<li><span class="japanese">中国語 (ちゅうごくご) が分かっています (わかっています)</span> - 懂中文（已經學會了）</li>
+</ul>
+<hr>
+<h2>8. 可能形</h2>
+<h3>變化規則</h3>
+<table>
+        <thead><tr>
+<th>動詞類型</th>
+<th>變化規則</th>
+<th>例句</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td><span class="japanese">第一類</span></td>
+<td>う段→え段+る</td>
+<td><span class="japanese">飲む (のむ) → 飲める (のめる)</span><br><span class="japanese">英語 (えいご) が話せる (はなせる)</span> - 會說英語<br><span class="japanese">100メートル泳げる (およげる)</span> - 能游100公尺</td>
+</tr>
+<tr>
+<td><span class="japanese">第二類</span></td>
+<td>詞幹+られる</td>
+<td><span class="japanese">食べる (たべる) → 食べられる (たべられる)</span><br><span class="japanese">納豆 (なっとう) が食べられる</span> - 能吃納豆</td>
+</tr>
+<tr>
+<td><span class="japanese">第三類</span></td>
+<td>する→できる<br>来る→こられる</td>
+<td><span class="japanese">日本語 (にほんご) ができる</span> - 會日語<br><span class="japanese">運転 (うんてん) ができる</span> - 會開車</td>
+</tr>
+</tbody>
+      </table><h3>特殊動詞</h3>
+<p><span class="japanese">天生能力 vs 條件許可</span></p>
+<ul>
+<li><span class="japanese">富士山 (ふじさん) が見える (みえる)</span> - 看得到富士山（天生能力）</li>
+<li><span class="japanese">映画 (えいが) が見られる (みられる)</span> - 能看電影（條件許可）</li>
+<li><span class="japanese">音楽 (おんがく) が聞こえる (きこえる)</span> - 聽得到音樂（天生能力）</li>
+<li><span class="japanese">ラジオが聞ける (きける)</span> - 能聽收音機（條件許可）</li>
+</ul>
+<h3>更多例句</h3>
+<ul>
+<li><span class="japanese">来年 (らいねん) アメリカへ行ける (いける)</span> - 明年能去美國</li>
+<li><span class="japanese">絵 (え) がかける</span> - 會畫畫</li>
+<li><span class="japanese">ピアノが弾ける (ひける)</span> - 會彈鋼琴</li>
+<li><span class="japanese">自転車 (じてんしゃ) に乗れる (のれる)</span> - 會騎腳踏車</li>
+</ul>
+<hr>
+<h2>9. 許可・禁止表現</h2>
+<h3>〜てもいいですか（詢問許可）</h3>
+<ul>
+<li><span class="japanese">ここで写真 (しゃしん) を撮って (とって) もいいですか</span> - 可以在這裡拍照嗎？</li>
+<li><span class="japanese">ここに座って (すわって) もいいですか</span> - 可以坐在這裡嗎？</li>
+<li><span class="japanese">このマンションでペットを飼って (かって) もいいですか</span> - 可以在這個公寓養寵物嗎？</li>
+<li><span class="japanese">電話 (でんわ) を借りて (かりて) もいいですか</span> - 可以借用電話嗎？</li>
+<li><span class="japanese">このコンピュータを使って (つかって) もいいですか</span> - 可以使用這台電腦嗎？</li>
+<li><span class="japanese">あした少し (すこし) 授業 (じゅぎょう) に遅れて (おくれて) もいいですか</span> - 明天上課稍微遲到一下可以嗎？</li>
+<li><span class="japanese">休憩時間 (きゅうけいじかん) にコーヒーを飲んで (のんで) もいいです</span> - 休息時間可以喝咖啡</li>
+</ul>
+<h4>回答方式</h4>
+<ul>
+<li><span class="japanese">いいです</span> - 可以</li>
+<li><span class="japanese">構いません (かまいません)</span> - 沒關係</li>
+<li><span class="japanese">大丈夫です (だいじょうぶです)</span> - 沒問題</li>
+</ul>
+<h3>〜てはいけません（禁止）</h3>
+<ul>
+<li><span class="japanese">写真 (しゃしん) を撮って (とって) はいけません</span> - 不准拍照</li>
+<li><span class="japanese">夜遅く (よるおそく) まで大きな (おおきな) 音 (おと) を出して (だして) はいけません</span> - 不可以到很晚還發出很大的聲音</li>
+<li><span class="japanese">会議中 (かいぎちゅう) に食べて (たべて) はいけません</span> - 會議中不可以吃東西</li>
+<li><span class="japanese">学校 (がっこう) を休んで (やすんで) はいけません</span> - 不可以翹課</li>
+</ul>
+<h3>〜なくてもいい（不做也可以）</h3>
+<ul>
+<li><span class="japanese">急がなくて (いそがなくて) もいい</span> - 不用趕也沒關係</li>
+<li><span class="japanese">行かなくて (いかなくて) もプレゼントがもらえる</span> - 就算不去也可以得到禮物</li>
+<li><span class="japanese">飲まなくて (のまなくて) も治る (なおる)</span> - 不喝藥也會好</li>
+<li><span class="japanese">見なくて (みなくて) も分かる (わかる)</span> - 不看也知道</li>
+<li><span class="japanese">雨 (あめ) が降って (ふって) も行きます (いきます)</span> - 就算下雨也要去</li>
+<li><span class="japanese">忙しくて (いそがしくて) も手伝います (てつだいます)</span> - 就算忙也會幫忙</li>
+<li><span class="japanese">日本語 (にほんご) が分からなくて (わからなくて) も大丈夫です (だいじょうぶです)</span> - 即使不懂日語也沒關係</li>
+</ul>
+<hr>
+<h2>10. 授受表現</h2>
+<h3>あげる（我/內團體→他人/外團體）</h3>
+<p><span class="japanese">給予（別人受惠）</span></p>
+<ul>
+<li><span class="japanese">友達 (ともだち) におみやげをあげました</span> - 送紀念品給朋友</li>
+<li><span class="japanese">健太君 (けんたくん) はおばさんに席 (せき) を譲って (ゆずって) あげました</span> - 健太讓位給阿姨</li>
+<li><span class="japanese">姉 (あね) はクラスメートに道 (みち) を教えて (おしえて) あげました</span> - 姊姊告訴同學路怎麼走</li>
+<li><span class="japanese">林 (はやし) さんは陳 (ちん) さんに宿題 (しゅくだい) を見せて (みせて) あげました</span> - 林先生把作業給陳先生看</li>
+<li><span class="japanese">わたしは母 (はは) を京都 (きょうと) へ連れて行って (つれていって) あげました</span> - 我帶媽媽去京都</li>
+<li><span class="japanese">祐介 (ゆうすけ) さんはおじさんの荷物 (にもつ) を持って (もって) あげました</span> - 祐介幫叔叔拿行李</li>
+</ul>
+<h3>くれる（他人/外團體→我/內團體）</h3>
+<p><span class="japanese">給予（我受惠）</span></p>
+<ul>
+<li><span class="japanese">友達 (ともだち) は私 (わたし) におみやげをくれました</span> - 朋友送紀念品給我</li>
+<li><span class="japanese">友達 (ともだち) が宿題 (しゅくだい) を見て (みて) くれた</span> - 朋友幫我看了作業</li>
+<li><span class="japanese">しあわせにしてあげてくれよな</span> - 請你讓她幸福</li>
+</ul>
+<h3>もらう（我←他人）</h3>
+<p><span class="japanese">接受（我主動得到）</span></p>
+<ul>
+<li><span class="japanese">私 (わたし) は友達 (ともだち) におみやげをもらいました</span> - 我從朋友那裡得到紀念品</li>
+<li><span class="japanese">友達 (ともだち) に宿題 (しゅくだい) を見て (みて) もらった</span> - 我請朋友幫我看了作業</li>
+<li><span class="japanese">クラスメートで一番 (いちばん) おもしろい田中 (たなか) さんに元気 (げんき) が出る (でる) 話 (はなし) をしてもらいます</span> - 請班上最有趣的田中同學講讓人振奮的話</li>
+<li><span class="japanese">母 (はは) においしい物 (もの) を作って (つくって) もらいます</span> - 請媽媽做好吃的東西</li>
+</ul>
+<h3>動詞+てもらう（我請別人做動作）</h3>
+<ul>
+<li><span class="japanese">ここにサインしてもらってもいいですか</span> - 可以請您在這裡簽名嗎？</li>
+<li><span class="japanese">見て (みて) もらう</span> - 請別人看；<span class="japanese">見せて (みせて) もらう</span> - 請別人出示給我看</li>
+<li><span class="japanese">連れて (つれて) いってもらいます</span> - 請別人帶我去</li>
+<li><span class="japanese">見てもらってください</span> - 請你請某人看…</li>
+</ul>
+<hr>
+<h2>11. のだ/んです用法</h2>
+<h3>説明・原因</h3>
+<p><span class="japanese">說明原因理由、強調背景</span></p>
+<ul>
+<li><span class="japanese">車 (くるま) が故障 (こしょう) したんです</span> - 車子故障了（所以搭電車來）</li>
+<li><span class="japanese">これから会議 (かいぎ) なんですけど、先に失礼 (しつれい) しますね</span> - 因為等下要開會，所以我先走了</li>
+<li><span class="japanese">妻 (つま) の携帯 (けいたい) に警察 (けいさつ) から電話 (でんわ) があったんです</span> - 警察打電話到我太太的手機</li>
+</ul>
+<h3>確認・質問</h3>
+<p><span class="japanese">觀察到跡象後想確認</span></p>
+<ul>
+<li><span class="japanese">寒い (さむい) んですか</span> - 你是會冷嗎？（觀察到對方的狀況）</li>
+<li><span class="japanese">これ、どうやって開ける (あける) の？</span> - 這個怎麼打開？（想知道方法）</li>
+<li><span class="japanese">刷不出去 (だしふできない) んですが…</span> - 刷不出去（需要協助的狀況）</li>
+</ul>
+<h3>強調</h3>
+<p><span class="japanese">強調事情的重要性</span></p>
+<ul>
+<li><span class="japanese">のだ + ですが/けど</span> - 不是「雖然…但是…」而是強調背景的用法</li>
+</ul>
+<hr>
+<h2>12. 假設語氣</h2>
+<table>
+        <thead><tr>
+<th>句型</th>
+<th>特徵</th>
+<th>使用場合</th>
+<th>例句</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td><span class="japanese">なら</span></td>
+<td>意志+意志，跟時間順序有關</td>
+<td>如果等一下會發生A，現在就做B</td>
+<td><span class="japanese">行きたければ (いきたければ)</span> - 如果你想去的話</td>
+</tr>
+<tr>
+<td><span class="japanese">たら</span></td>
+<td>條件+結果</td>
+<td>假設條件成立後的結果</td>
+<td><span class="japanese">雨 (あめ) が降ったら (ふったら)、行きません (いきません)</span> - 如果下雨的話，就不去</td>
+</tr>
+<tr>
+<td><span class="japanese">ば</span></td>
+<td>假設條件</td>
+<td>一般性假設</td>
+<td><span class="japanese">早く (はやく) 帰れば (かえれば)、間に合います (まにあいます)</span> - 如果早點回去的話，就來得及</td>
+</tr>
+<tr>
+<td><span class="japanese">と</span></td>
+<td>自然結果</td>
+<td>自然發生的結果</td>
+<td><span class="japanese">ボタンを押す (おす) と、電気 (でんき) がつきます</span> - 按按鈕的話，燈就會亮</td>
+</tr>
+<tr>
+<td><span class="japanese">なくては</span></td>
+<td>必須性條件</td>
+<td>如果不做...就會...</td>
+<td><span class="japanese">帰らなくては (かえらなくては) 間に合わない (まにあわない)</span> - 如果不回去的話，就來不及了</td>
+</tr>
+</tbody>
+      </table><h3>更多なくては例句</h3>
+<ul>
+<li><span class="japanese">教えなくて (おしえなくて) はAさんが危ない (あぶない)</span> - 如果不告訴A先生的話，他可能會遇到麻煩</li>
+<li><span class="japanese">出さなくて (ださなくて) は零点 (れいてん) になる</span> - 如果不交的話，會得零分</li>
+</ul>
+<hr>
+<h2>13. 命令形・意志形</h2>
+<h3>變化規則</h3>
+<table>
+        <thead><tr>
+<th>動詞類型</th>
+<th>命令形</th>
+<th>禁止形</th>
+<th>意志形</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td><span class="japanese">第一類</span></td>
+<td>う段→え段</td>
+<td>原形+な</td>
+<td>う段→お段+う</td>
+</tr>
+<tr>
+<td><span class="japanese">第二類</span></td>
+<td>る→ろ</td>
+<td>原形+な</td>
+<td>る→よう</td>
+</tr>
+<tr>
+<td><span class="japanese">第三類</span></td>
+<td>不規則</td>
+<td>原形+な</td>
+<td>不規則</td>
+</tr>
+</tbody>
+      </table><h3>具體例句</h3>
+<h4>第一類動詞</h4>
+<ul>
+<li><span class="japanese">書く (かく) → 書け (かけ) → 書くな (かくな) → 書こう (かこう)</span></li>
+<li><span class="japanese">止まる (とまる) → 止まれ (とまれ)</span> - 停下來（交通標誌）</li>
+<li><span class="japanese">待つ (まつ) → 待て (まて)</span> - 等等</li>
+<li><span class="japanese">しっかりしろ</span> - 振作一點</li>
+<li><span class="japanese">帰る (かえる) → 帰れ (かえれ) → 帰るな (かえるな) → 帰ろう (かえろう)</span></li>
+<li><span class="japanese">休む (やすむ) → 休め (やすめ) → 休むな (やすむな) → 休もう (やすもう)</span></li>
+<li><span class="japanese">遊ぶ (あそぶ) → 遊べ (あそべ) → 遊ぶな (あそぶな) → 遊ぼう (あそぼう)</span></li>
+</ul>
+<h4>第二類動詞</h4>
+<ul>
+<li><span class="japanese">見る (みる) → 見ろ (みろ) → 見るな (みるな) → 見よう (みよう)</span></li>
+<li><span class="japanese">食べる (たべる) → 食べろ (たべろ) → 食べるな (たべるな) → 食べよう (たべよう)</span></li>
+<li><span class="japanese">入る (はいる) → 入れ (はいれ) → 入るな (はいるな) → 入ろう (はいろう)</span></li>
+</ul>
+<h4>第三類動詞</h4>
+<ul>
+<li><span class="japanese">する → しろ → するな → しよう</span></li>
+<li><span class="japanese">来る (くる) → こい → 来るな (くるな) → こよう</span></li>
+</ul>
+<h3>意志形例句（表示決心或邀請）</h3>
+<ul>
+<li><span class="japanese">スマホと歩いて (あるいて)、プレゼントをもらおう</span> - 一邊走路一邊玩手機來得到禮物</li>
+<li><span class="japanese">たばこ・たき火 (び) はよく消そう (けそう)</span> - 香菸和營火要徹底熄滅</li>
+<li><span class="japanese">一緒 (いっしょ) に頑張ろう (がんばろう)</span> - 一起加油吧</li>
+<li><span class="japanese">乗りましょう (のりましょう)</span>（丁寧體）→ <span class="japanese">乗ろう (のろう)</span>（普通體）- 坐吧</li>
+</ul>
+<hr>
+<h2>14. 補充重要文法</h2>
+<h3>着用動詞</h3>
+<p><span class="japanese">穿戴相關動詞的區別</span></p>
+<ul>
+<li><span class="japanese">着る (きる)</span> - 穿（上半身，從頭套下來的）</li>
+<li><span class="japanese">履く (はく)</span> - 穿（從腳往上穿的）</li>
+<li><span class="japanese">かぶる</span> - 戴（從上面罩住，如帽子）</li>
+<li><span class="japanese">する</span> - 戴（配件，如手錶、領帶）</li>
+<li><span class="japanese">締める (しめる)</span> - 綁上/綁起來（如皮帶）</li>
+<li><span class="japanese">かける</span> - 掛上去（如眼鏡）</li>
+<li><span class="japanese">上着・下着</span> - 外套・內衣（以接近皮膚程度區分）</li>
+</ul>
+<p><span class="japanese">重要概念：</span></p>
+<ul>
+<li><span class="japanese">過去式</span> → 穿/戴的過程結束</li>
+<li><span class="japanese">してる</span> → 穿/戴的過程結束所呈現的狀態</li>
+</ul>
+<h3>助詞用法</h3>
+<p><span class="japanese">重要助詞的使用區別</span></p>
+<ul>
+<li><span class="japanese">で</span> - 動作發生的地點：<span class="japanese">図書館 (としょかん) で勉強 (べんきょう) します</span></li>
+<li><span class="japanese">に</span> - 狀態存在的地點：<span class="japanese">家 (いえ) にいます</span></li>
+<li><span class="japanese">へ/に</span> - 目的地：<span class="japanese">学校 (がっこう) へ/に行きます (いきます)</span></li>
+<li><span class="japanese">を→が</span> - 可能形時：<span class="japanese">日本語 (にほんご) を話す (はなす) → 日本語 (にほんご) が話せる (はなせる)</span></li>
+<li><span class="japanese">に</span> - 移動目的：<span class="japanese">映画 (えいが) を見に (みに) 行きます (いきます)</span></li>
+<li><span class="japanese">で</span> - 手段・工具：<span class="japanese">車 (くるま) で行きます (いきます)</span></li>
+</ul>
+<h3>時間表現</h3>
+<p><span class="japanese">各種時間相關用法</span></p>
+<ul>
+<li><span class="japanese">朝五時 (あさごじ) に</span> - 在早上五點</li>
+<li><span class="japanese">一日中</span> - 整天</li>
+<li><span class="japanese">夕方</span> - 傍晚</li>
+<li><span class="japanese">何度 (なんど) か</span> - 好幾次</li>
+<li><span class="japanese">もう</span> - 已經</li>
+<li><span class="japanese">まだ</span> - 還（沒）</li>
+<li><span class="japanese">先に</span> - 先、接下來</li>
+<li><span class="japanese">さっき</span> - 剛才</li>
+</ul>
+<h3>複合動詞</h3>
+<p><span class="japanese">由多個動詞組成的複合動詞</span></p>
+<ul>
+<li><span class="japanese">間に合う (まにあう)</span> - 來得及</li>
+<li><span class="japanese">待ち合わせる (まちあわせる)</span> - 約定見面</li>
+<li><span class="japanese">連れてくる (つれてくる)</span> - 帶來</li>
+<li><span class="japanese">連れていく (つれていく)</span> - 帶去</li>
+<li><span class="japanese">戻る (もどる)</span> - 回去（會再回來原地）</li>
+<li><span class="japanese">帰る (かえる)</span> - 回家/離開現在的地方</li>
+</ul>
+<h3>でから / ながら</h3>
+<p><span class="japanese">動作的時間關係</span></p>
+<h4>でから：時間先後順序</h4>
+<ul>
+<li><span class="japanese">コーヒーを飲んで (のんで) から授業 (じゅぎょう) を受けます (うけます)</span> - 喝完咖啡後上課</li>
+</ul>
+<h4>ながら：同時進行動作</h4>
+<ul>
+<li><span class="japanese">お茶 (ちゃ) を飲み (のみ) ながらテレビを見ます (みます)</span> - 一邊喝茶一邊看電視</li>
+<li><span class="japanese">ながらの變化：V ます形去掉ます + ながら</span></li>
+<li><span class="japanese">飲みます → 飲み + ながら</span></li>
+</ul>
+<h3>動詞意義區別</h3>
+<p><span class="japanese">意思相近但用法不同的動詞</span></p>
+<ul>
+<li><span class="japanese">見る (みる)</span> - 看（自己決定）vs <span class="japanese">見せる (みせる)</span> - 出示給別人看</li>
+<li><span class="japanese">働く (はたらく)</span> - 工作（動作性）vs <span class="japanese">勤める (つとめる)</span> - 任職（狀態性）</li>
+<li><span class="japanese">知る (しる)</span> - 知道（瞬間）vs <span class="japanese">分かる (わかる)</span> - 了解（理解）</li>
+<li><span class="japanese">寝る (ねる)</span> - 躺下 vs <span class="japanese">眠る (ねむる)</span> - 睡著</li>
+<li><span class="japanese">借りる (かりる)</span> - 借用 vs <span class="japanese">貸す (かす)</span> - 借出</li>
+<li><span class="japanese">取る (とる)</span> - 用手拿 vs <span class="japanese">もらう</span> - 得到（要跟某人要）</li>
+</ul>
+<h3>特殊用法</h3>
+<p><span class="japanese">一些特殊的日語表達</span></p>
+<ul>
+<li><span class="japanese">いってきます</span> - 我出去了（出門時說）</li>
+<li><span class="japanese">お先に</span> - 我先走了</li>
+<li><span class="japanese">コーヒー/お茶 (ちゃ) を入れます (いれます)</span> - 泡咖啡/泡茶（固定用法）</li>
+<li><span class="japanese">電話 (でんわ) をかける</span> - 打電話 / <span class="japanese">電話 (でんわ) がかかる</span> - 電話打來</li>
+<li><span class="japanese">鍵 (かぎ) をかける</span> - 上鎖 / <span class="japanese">鍵 (かぎ) がかかる</span> - 鎖住了</li>
+<li><span class="japanese">掛ける (かける)</span> - 掛上去、蓋棉被、打電話</li>
+</ul>
+<hr>
+<h2>學習要點</h2>
+<ul>
+<li><span class="japanese">學習順序</span>：名詞 → 形容詞 → 動詞 → 複雜句型</li>
+<li><span class="japanese">動詞變化 + 句型 = 新詞彙</span>：理解動詞變化並與不同句型結合是關鍵</li>
+<li><span class="japanese">所有形容詞或動詞都有普通體和丁寧體之分</span>：依語境選擇使用</li>
+<li><span class="japanese">助詞的重要性</span>：を/が、に/で 的使用會影響句意</li>
+<li><span class="japanese">靈活性</span>：只要意義合理，各種活用形式都可以串聯使用</li>
+<li><span class="japanese">語境敏感性</span>：普通體用於親近的人，丁寧體用於正式場合</li>
+<li><span class="japanese">音便變化</span>：て形變化中的音韻變化是為了發音方便</li>
+</ul>
+<h2>常見錯誤提醒</h2>
+<ul>
+<li><span class="japanese">な形容詞修飾名詞</span>：一定要加「な」，不能用「の」（便利の町 ✗ → 便利な町 ✓）</li>
+<li><span class="japanese">可能形助詞</span>：「を」要改成「が」（日本語を話せる ✗ → 日本語が話せる ✓）</li>
+<li><span class="japanese">ている的三種用法</span>：要根據動詞性質判斷是進行、習慣還是結果狀態</li>
+<li><span class="japanese">授受表現的方向性</span>：要注意恩惠的流向和說話者的立場</li>
+<li><span class="japanese">敬語程度</span>：あげる有施恩意味，使用時要注意對象和場合</li>
+<li><span class="japanese">動詞分類</span>：要正確判斷動詞是第一類、第二類還是第三類</li>
+<li><span class="japanese">音便變化</span>：第一類動詞的て形變化要注意音便規則</li>
+</ul>
+<h2>文法學習策略</h2>
+<ul>
+<li><span class="japanese">先理解概念再記例句</span>：理解文法概念後，多背例句來內化用法</li>
+<li><span class="japanese">從簡單句型開始</span>：先掌握基本的てください、ています等句型</li>
+<li><span class="japanese">注意動詞性質</span>：持續性/瞬間性、意志性/非意志性會影響用法</li>
+<li><span class="japanese">多練習變化</span>：動詞變化是日語的核心，需要大量練習</li>
+<li><span class="japanese">語境練習</span>：同樣的意思在不同語境下要用不同的表達方式</li>
+<li><span class="japanese">聽說讀寫並進</span>：不只是理解，更要能實際運用</li>
+</ul>
+<hr>
+<h2>總結</h2>
+<p>這份文法整理涵蓋了日語學習的核心內容，從基礎的動詞分類到複雜的授受表現，每個概念都配有豐富的例句。建議學習者：</p>
+<ol>
+<li><span class="japanese">循序漸進</span>：按照章節順序學習，先打好基礎</li>
+<li><span class="japanese">多加練習</span>：每學一個概念就要大量練習例句</li>
+<li><span class="japanese">活用組合</span>：學會將不同文法概念組合使用</li>
+<li><span class="japanese">注意語境</span>：根據場合選擇適當的表達方式</li>
+</ol>
+<p>掌握這些文法概念，就能在日語溝通中表達出豐富而準確的意思！</p>
+
+    </div>
+</body>
+</html>

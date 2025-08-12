@@ -1,0 +1,35 @@
+{
+  "name": "md2web",
+  "version": "1.0.0",
+  "description": "Bidirectional HTML to Markdown converter with live sync",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "convert": "node src/cli.js",
+    "test": "jest"
+  },
+  "keywords": [
+    "html",
+    "markdown",
+    "converter",
+    "sync",
+    "editor"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0-rc.12",
+    "chokidar": "^3.5.3",
+    "commander": "^11.1.0",
+    "fs-extra": "^11.1.1",
+    "marked": "^9.1.6",
+    "puppeteer": "^24.16.1",
+    "turndown": "^7.1.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2"
+  }
+}

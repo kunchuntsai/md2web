@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Template</title>
+    <style>
+        body {
+            font-family: 'Microsoft JhengHei', '微軟正黑體', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #34495e;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        h4 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th {
+            background: linear-gradient(90deg, #34495e, #2c3e50);
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+        .japanese {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .chinese {
+            color: #27ae60;
+        }
+        .example {
+            background-color: #fff3cd;
+            padding: 6px;
+            border-radius: 4px;
+            margin: 3px 0;
+            border-left: 4px solid #ffc107;
+            font-size: 12px;
+        }
+        .note {
+            background-color: #d1ecf1;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #17a2b8;
+        }
+        .grammar-point {
+            background-color: #e8f5e8;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 5px 0;
+            border-left: 4px solid #28a745;
+        }
+        .highlight {
+            background-color: #fff2e6;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        blockquote {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #f1f2f6;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        code {
+            background-color: #f1f2f6;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+        }
+        pre {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ddd, transparent);
+            margin: 30px 0;
+        }
+        p {
+            margin: 15px 0;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        em {
+            color: #7f8c8d;
+        }
+    </style>
+
+    <title>Document Template</title>
+    
+    <style>
+
+        body {
+            font-family: 'Microsoft JhengHei', '微軟正黑體', Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f8f9fa;
+        }
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #34495e;
+            background: linear-gradient(90deg, #3498db, #2980b9);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #34495e;
+            border-bottom: 2px solid #ecf0f1;
+            padding-bottom: 10px;
+        }
+        h4 {
+            color: #34495e;
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 14px;
+        }
+        th {
+            background: linear-gradient(90deg, #34495e, #2c3e50);
+            color: white;
+            padding: 12px 8px;
+            text-align: center;
+            font-weight: bold;
+        }
+        td {
+            padding: 8px 6px;
+            border: 1px solid #ddd;
+            vertical-align: top;
+        }
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        tr:hover {
+            background-color: #e3f2fd;
+        }
+        .japanese {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .chinese {
+            color: #27ae60;
+        }
+        .example {
+            background-color: #fff3cd;
+            padding: 6px;
+            border-radius: 4px;
+            margin: 3px 0;
+            border-left: 4px solid #ffc107;
+            font-size: 12px;
+        }
+        .note {
+            background-color: #d1ecf1;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 10px 0;
+            border-left: 4px solid #17a2b8;
+        }
+        .grammar-point {
+            background-color: #e8f5e8;
+            padding: 8px;
+            border-radius: 4px;
+            margin: 5px 0;
+            border-left: 4px solid #28a745;
+        }
+        .highlight {
+            background-color: #fff2e6;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        blockquote {
+            margin: 10px 0;
+            padding: 10px 20px;
+            background-color: #f1f2f6;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        code {
+            background-color: #f1f2f6;
+            padding: 2px 4px;
+            border-radius: 3px;
+            font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+        }
+        pre {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 15px;
+            border-radius: 6px;
+            overflow-x: auto;
+        }
+        pre code {
+            background: none;
+            color: inherit;
+            padding: 0;
+        }
+        ul, ol {
+            margin: 10px 0;
+            padding-left: 25px;
+        }
+        li {
+            margin: 5px 0;
+        }
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #ddd, transparent);
+            margin: 30px 0;
+        }
+        p {
+            margin: 15px 0;
+        }
+        strong {
+            color: #2c3e50;
+        }
+        em {
+            color: #7f8c8d;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>日文動詞活用表格完整版</h1>
+<table>
+        <thead><tr>
+<th>句型</th>
+<th align="center">變化</th>
+<th>變化形式</th>
+<th>例句</th>
+<th>中文翻譯及讀音</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td>表達自己的意志</td>
+<td align="center">一</td>
+<td>動詞未然形 + ～うと思う</td>
+<td>うまくいくといいなと思っています</td>
+<td>希望一切順利 / うまくいくといいなとおもっています</td>
+</tr>
+<tr>
+<td>表達自己的意志</td>
+<td align="center">一</td>
+<td>動詞未然形 + ～するつもり</td>
+<td>宿題と自己紹介を準備するつもりです</td>
+<td>打算準備作業和自我介紹 / しゅくだいとじこしょうかいをじゅんびするつもりです</td>
+</tr>
+<tr>
+<td>表達否定的用法</td>
+<td align="center">一</td>
+<td>動詞未然形 + ない（です）</td>
+<td>見た目があまり好きじゃありません</td>
+<td>不太喜歡那個外觀 / みためがあまりすきじゃありません</td>
+</tr>
+<tr>
+<td>表達義務的用法</td>
+<td align="center">一</td>
+<td>動詞未然形 + なければ/ならない</td>
+<td>宿題をしなければならない</td>
+<td>必須做作業 / しゅくだいをしなければならない</td>
+</tr>
+<tr>
+<td>表達能力的用法</td>
+<td align="center">一</td>
+<td>動詞未然形 + （ら）れる/（ら）れます</td>
+<td>日本語が話せます</td>
+<td>會說日文 / にほんごがはなせます</td>
+</tr>
+<tr>
+<td>表達能力的用法</td>
+<td align="center">一</td>
+<td>動詞未然形 + （ら）れる/（ら）れます</td>
+<td>やっと理解できました</td>
+<td>終於能夠理解了 / やっとりかいできました</td>
+</tr>
+<tr>
+<td>受身表現</td>
+<td align="center">一</td>
+<td>動詞未然形 + れる/られる</td>
+<td>妻に髪がウーパールーパーみたいだと言われました</td>
+<td>被妻子說頭髮像墨西哥鈍口螈 / つまにかみがウーパールーパーみたいだといわれました</td>
+</tr>
+<tr>
+<td>受身表現</td>
+<td align="center">一</td>
+<td>動詞未然形 + れる/られる</td>
+<td>天気予報では曇りで時々雨が降ると言っていました</td>
+<td>天氣預報說多雲偶爾下雨 / てんきよほうではくもりでときどきあめがふるといっていました</td>
+</tr>
+<tr>
+<td>表示敬意的用法</td>
+<td align="center">二</td>
+<td>動詞連用形 + ます</td>
+<td>車で3時間かかりました</td>
+<td>開車花了3小時 / くるまでさんじかんかかりました</td>
+</tr>
+<tr>
+<td>表示敬意的用法</td>
+<td align="center">二</td>
+<td>動詞連用形 + ます</td>
+<td>一日中家でゴロゴロしていました</td>
+<td>整天在家裡懶洋洋地度過 / いちにちじゅういえでゴロゴロしていました</td>
+</tr>
+<tr>
+<td>表示邀約的用法</td>
+<td align="center">二</td>
+<td>動詞連用形 + ましょう</td>
+<td>憧れるのをやめましょう</td>
+<td>別再崇拜了吧 / あこがれるのをやめましょう</td>
+</tr>
+<tr>
+<td>表示邀約的用法</td>
+<td align="center">二</td>
+<td>動詞連用形 + ましょう</td>
+<td>勝つことだけ考えていきましょう</td>
+<td>只想著要獲勝吧 / かつことだけかんがえていきましょう</td>
+</tr>
+<tr>
+<td>向對方表達自己的願望</td>
+<td align="center">二</td>
+<td>動詞連用形 + たい（です）</td>
+<td>こんな髪型にしたいんです</td>
+<td>想要這樣的髮型 / こんなかみがたにしたいんです</td>
+</tr>
+<tr>
+<td>向對方表達自己的願望</td>
+<td align="center">二</td>
+<td>動詞連用形 + たかった</td>
+<td>パーマをかけたかったのですが</td>
+<td>想要燙頭髮，但是... / パーマをかけたかったのですが</td>
+</tr>
+<tr>
+<td>表示為了～目的而前去的用法</td>
+<td align="center">二</td>
+<td>動詞連用形 + に行く</td>
+<td>髪を切りに行きました</td>
+<td>去剪頭髮了 / かみをきりにいきました</td>
+</tr>
+<tr>
+<td>表示為了～目的而前去的用法</td>
+<td align="center">二</td>
+<td>動詞連用形 + に行く</td>
+<td>家を見に行きました</td>
+<td>去看房子了 / いえをみにいきました</td>
+</tr>
+<tr>
+<td>表示為了～目的而前去的用法</td>
+<td align="center">二</td>
+<td>動詞連用形 + に行く</td>
+<td>食べ物を買いに行きました</td>
+<td>去買食物了 / たべものをかいにいきました</td>
+</tr>
+<tr>
+<td>過去式用法</td>
+<td align="center">二</td>
+<td>動詞連用形 + た/ました</td>
+<td>週末に富士山の近くでキャンプをしました</td>
+<td>週末在富士山附近露營了 / しゅうまつにふじさんのちかくでキャンプをしました</td>
+</tr>
+<tr>
+<td>過去式用法</td>
+<td align="center">二</td>
+<td>動詞連用形 + た/ました</td>
+<td>友達と会って、コストコに行きました</td>
+<td>和朋友見面，去了好市多 / ともだちとあって、コストコにいきました</td>
+</tr>
+<tr>
+<td>過去式用法</td>
+<td align="center">二</td>
+<td>動詞連用形 + た/ました</td>
+<td>今日の午後、髪を切りに行きました</td>
+<td>今天下午去剪頭髮了 / きょうのごご、かみをきりにいきました</td>
+</tr>
+<tr>
+<td>表達過去經驗的用法</td>
+<td align="center">二</td>
+<td>動詞連用形 + たことがある</td>
+<td>野球やっていれば誰しもが聞いたことがあるような選手たち</td>
+<td>只要打過棒球的人都聽過的選手們 / やきゅうやっていればだれしもがきいたことがあるようなせんしゅたち</td>
+</tr>
+<tr>
+<td>造出長文</td>
+<td align="center">二</td>
+<td>動詞連用形；動詞連用形 + て形</td>
+<td>リビング、キッチン、バスルームを掃除して、洗濯をしました</td>
+<td>打掃客廳、廚房、浴室，還洗衣服 / リビング、キッチン、バスルームをそうじして、せんたくをしました</td>
+</tr>
+<tr>
+<td>造出長文</td>
+<td align="center">二</td>
+<td>動詞連用形；動詞連用形 + て形</td>
+<td>猫のトイレを掃除して、食料品の買い物に行きました</td>
+<td>清理貓砂，去買食品 / ねこのトイレをそうじして、しょくりょうひんのかいものにいきました</td>
+</tr>
+<tr>
+<td>謙讓表現</td>
+<td align="center">二</td>
+<td>動詞連用形 + てもらう</td>
+<td>ちょっと見せてもらっていいですか</td>
+<td>可以幫我出示(某物)一下嗎？ / ちょっとみせてもらっていいですか</td>
+</tr>
+<tr>
+<td>継続・進行表現</td>
+<td align="center">二</td>
+<td>動詞連用形 + ている</td>
+<td>奥さんと息子さんは台湾に住んでいます</td>
+<td>太太和兒子住在台灣 / おくさんとむすこさんはたいわんにすんでいます</td>
+</tr>
+<tr>
+<td>継続・進行表現</td>
+<td align="center">二</td>
+<td>動詞連用形 + ている</td>
+<td>時々飛行機で行き来しています</td>
+<td>偶爾搭飛機往返 / ときどきひこうきでいききしています</td>
+</tr>
+<tr>
+<td>描述的技巧</td>
+<td align="center">四</td>
+<td>用「動詞連体形」來修飾名詞</td>
+<td>野球やっていれば誰しもが聞いたことがあるような選手たち</td>
+<td>只要打過棒球的人都聽過的選手們 / やきゅうやっていればだれしもがきいたことがあるようなせんしゅたち</td>
+</tr>
+<tr>
+<td>描述的技巧</td>
+<td align="center">四</td>
+<td>用「動詞連体形」來修飾名詞</td>
+<td>変だけど可愛い動物でした</td>
+<td>雖然奇怪但很可愛的動物 / へんだけどかわいいどうぶつでした</td>
+</tr>
+<tr>
+<td>自發・可能表現</td>
+<td align="center">四</td>
+<td>動詞連体形 + ことができる</td>
+<td>予約の時に一つ選ぶことができました</td>
+<td>預約時能夠選擇一個 / よやくのときにひとつえらぶことができました</td>
+</tr>
+<tr>
+<td>表達「假定」的句型</td>
+<td align="center">五</td>
+<td>用「動詞仮定形 + ば」來表達假定</td>
+<td>できれば近いうちに戻れればと思います</td>
+<td>如果可能的話，希望能在近期內恢復 / できればちかいうちにもどれればとおもいます</td>
+</tr>
+<tr>
+<td>表達「假定」的句型</td>
+<td align="center">五</td>
+<td>動詞て形 + しまったら + 可能動詞否定形</td>
+<td>憧れてしまったら超えられません</td>
+<td>如果崇拜的話就無法超越 / あこがれてしまったらこえられません</td>
+</tr>
+<tr>
+<td>命令句</td>
+<td align="center">六</td>
+<td>動詞命令形</td>
+<td>座れよ</td>
+<td>坐下吧 / すわれよ</td>
+</tr>
+<tr>
+<td>命令句</td>
+<td align="center">六</td>
+<td>動詞命令形</td>
+<td>さあ行こう！</td>
+<td>走吧！ / さあいこう！</td>
+</tr>
+</tbody>
+      </table><hr>
+<h2>敬語分類說明</h2>
+<table>
+        <thead><tr>
+<th>分類</th>
+<th>例子</th>
+<th>讀音</th>
+</tr>
+</thead>
+        <tbody><tr>
+<td>一般用法</td>
+<td>食べる、行く、見る</td>
+<td>たべる、いく、みる</td>
+</tr>
+<tr>
+<td>尊敬語</td>
+<td>いらっしゃる（来る的尊敬語）、召し上がる（食べる的尊敬語）</td>
+<td>いらっしゃる（くるのそんけいご）、めしあがる（たべるのそんけいご）</td>
+</tr>
+<tr>
+<td>謙讓語</td>
+<td>参る（行く的謙讓語）、いただく（もらう的謙讓語）</td>
+<td>まいる（いくのけんじょうご）、いただく（もらうのけんじょうご）</td>
+</tr>
+</tbody>
+      </table>
+    </div>
+</body>
+</html>

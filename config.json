@@ -1,0 +1,45 @@
+{
+  "conversion": {
+    "preserveStyles": true,
+    "tableStyle": "gfm",
+    "headingStyle": "atx",
+    "bulletListMarker": "-",
+    "codeBlockStyle": "fenced"
+  },
+  "watcher": {
+    "stabilityThreshold": 100,
+    "pollInterval": 50,
+    "ignoreInitial": true
+  },
+  "output": {
+    "addMetadata": true,
+    "backupOriginal": false,
+    "timestampFormat": "ISO"
+  },
+  "customRules": {
+    "japanese": {
+      "className": "japanese",
+      "markdown": "**{content}**"
+    },
+    "chinese": {
+      "className": "chinese", 
+      "markdown": "*{content}*"
+    },
+    "highlight": {
+      "className": "highlight",
+      "markdown": "==={content}==="
+    },
+    "example": {
+      "className": "example",
+      "markdown": "> **Example**: {content}"
+    },
+    "note": {
+      "className": "note", 
+      "markdown": "> **Note**: {content}"
+    },
+    "grammarPoint": {
+      "className": "grammar-point",
+      "markdown": "> **Grammar**: {content}"
+    }
+  }
+}
