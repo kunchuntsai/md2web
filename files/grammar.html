@@ -4,7 +4,7 @@
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Template</title>
+    
     <style>
         body {
             font-family: 'Microsoft JhengHei', '微軟正黑體', Arial, sans-serif;
@@ -152,7 +152,7 @@
         }
     </style>
 
-    <title>Document Template</title>
+    <title>日本語文法精要：完整整理表</title>
     
     <style>
 
@@ -301,14 +301,158 @@
             color: #7f8c8d;
         }
     
+        .toc-dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0 30px 0;
+        }
+        .toc-toggle {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 10px rgba(74, 144, 226, 0.3);
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .toc-toggle:hover {
+            background: linear-gradient(135deg, #357abd, #2968a3);
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+            transform: translateY(-1px);
+        }
+        .toc-toggle:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+        }
+        .toc-icon {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .toc-arrow {
+            margin-left: auto;
+            transition: transform 0.3s ease;
+        }
+        .toc-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 350px;
+            max-width: 500px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            z-index: 1000;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+            margin-top: 5px;
+        }
+        .toc-content ul {
+            list-style-type: none;
+            padding: 10px 0;
+            margin: 0;
+        }
+        .toc-content ul ul {
+            padding-left: 20px;
+        }
+        .toc-content li {
+            margin: 0;
+        }
+        .toc-content a {
+            text-decoration: none;
+            color: #495057;
+            font-size: 14px;
+            line-height: 1.4;
+            display: block;
+            padding: 8px 20px;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+        .toc-content a:hover {
+            background-color: #f8f9fa;
+            color: #007bff;
+            border-left-color: #007bff;
+        }
+        .toc-content ul ul a {
+            padding-left: 40px;
+            font-size: 13px;
+            color: #6c757d;
+        }
+        @media (max-width: 768px) {
+            .toc-content {
+                min-width: 300px;
+                max-width: calc(100vw - 40px);
+            }
+        }
+        .back-to-top {
+            text-align: right;
+            margin: 10px 0 20px 0;
+            font-size: 12px;
+        }
+        .back-to-top a {
+            color: #6c757d;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        .back-to-top a:hover {
+            color: #495057;
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>日本語文法精要：完整整理表</h1>
+
+    <div class="toc-dropdown">
+      <button class="toc-toggle" onclick="toggleTOC()">
+        <span class="toc-icon">☰</span>
+        目錄 / Table of Contents
+        <span class="toc-arrow">▼</span>
+      </button>
+      <div class="toc-content" id="toc-content">
+        <ul><li><a href="#heading-0" onclick="closeTOC()">1. 動詞分類</a></li><ul><li><a href="#heading-1" onclick="closeTOC()">例句</a></li></ul><li><a href="#heading-2" onclick="closeTOC()">2. 形容詞分類</a></li><ul><li><a href="#heading-3" onclick="closeTOC()">例句</a></li></ul><li><a href="#heading-4" onclick="closeTOC()">3. 動詞基本變化形 - 六大活用形</a></li><li><a href="#heading-5" onclick="closeTOC()">4. 普通體與丁寧體</a></li><li><a href="#heading-6" onclick="closeTOC()">5. て形變化</a></li><ul><li><a href="#heading-7" onclick="closeTOC()">名詞・形容詞</a></li><li><a href="#heading-8" onclick="closeTOC()">動詞て形變化</a></li><li><a href="#heading-11" onclick="closeTOC()">て形接續例句</a></li></ul><li><a href="#heading-12" onclick="closeTOC()">6. 基本請求表現</a></li><ul><li><a href="#heading-13" onclick="closeTOC()">〜てください（禮貌的請求）</a></li><li><a href="#heading-14" onclick="closeTOC()">〜ないでください（請求不要做）</a></li></ul><li><a href="#heading-15" onclick="closeTOC()">7. ている形用法</a></li><ul><li><a href="#heading-16" onclick="closeTOC()">進行動作</a></li><li><a href="#heading-17" onclick="closeTOC()">習慣・状態</a></li><li><a href="#heading-18" onclick="closeTOC()">結果状態</a></li><li><a href="#heading-19" onclick="closeTOC()">否定用法</a></li><li><a href="#heading-20" onclick="closeTOC()">長期状態動詞</a></li></ul><li><a href="#heading-21" onclick="closeTOC()">8. 可能形</a></li><ul><li><a href="#heading-22" onclick="closeTOC()">變化規則</a></li><li><a href="#heading-23" onclick="closeTOC()">特殊動詞</a></li><li><a href="#heading-24" onclick="closeTOC()">更多例句</a></li></ul><li><a href="#heading-25" onclick="closeTOC()">9. 許可・禁止表現</a></li><ul><li><a href="#heading-26" onclick="closeTOC()">〜てもいいですか（詢問許可）</a></li><li><a href="#heading-28" onclick="closeTOC()">〜てはいけません（禁止）</a></li><li><a href="#heading-29" onclick="closeTOC()">〜なくてもいい（不做也可以）</a></li></ul><li><a href="#heading-30" onclick="closeTOC()">10. 授受表現</a></li><ul><li><a href="#heading-31" onclick="closeTOC()">あげる（我/內團體→他人/外團體）</a></li><li><a href="#heading-32" onclick="closeTOC()">くれる（他人/外團體→我/內團體）</a></li><li><a href="#heading-33" onclick="closeTOC()">もらう（我←他人）</a></li><li><a href="#heading-34" onclick="closeTOC()">動詞+てもらう（我請別人做動作）</a></li></ul><li><a href="#heading-35" onclick="closeTOC()">11. のだ/んです用法</a></li><ul><li><a href="#heading-36" onclick="closeTOC()">説明・原因</a></li><li><a href="#heading-37" onclick="closeTOC()">確認・質問</a></li><li><a href="#heading-38" onclick="closeTOC()">強調</a></li></ul><li><a href="#heading-39" onclick="closeTOC()">12. 假設語氣</a></li><ul><li><a href="#heading-40" onclick="closeTOC()">更多なくては例句</a></li></ul><li><a href="#heading-41" onclick="closeTOC()">13. 命令形・意志形</a></li><ul><li><a href="#heading-42" onclick="closeTOC()">變化規則</a></li><li><a href="#heading-43" onclick="closeTOC()">具體例句</a></li><li><a href="#heading-47" onclick="closeTOC()">意志形例句（表示決心或邀請）</a></li></ul><li><a href="#heading-48" onclick="closeTOC()">14. 補充重要文法</a></li><ul><li><a href="#heading-49" onclick="closeTOC()">着用動詞</a></li><li><a href="#heading-50" onclick="closeTOC()">助詞用法</a></li><li><a href="#heading-51" onclick="closeTOC()">時間表現</a></li><li><a href="#heading-52" onclick="closeTOC()">複合動詞</a></li><li><a href="#heading-53" onclick="closeTOC()">でから / ながら</a></li><li><a href="#heading-56" onclick="closeTOC()">動詞意義區別</a></li><li><a href="#heading-57" onclick="closeTOC()">特殊用法</a></li></ul><li><a href="#heading-58" onclick="closeTOC()">學習要點</a></li><li><a href="#heading-59" onclick="closeTOC()">常見錯誤提醒</a></li><li><a href="#heading-60" onclick="closeTOC()">文法學習策略</a></li><li><a href="#heading-61" onclick="closeTOC()">總結</a></li></ul>
+        </ul>
+      </div>
+    </div>
+    <script>
+      function toggleTOC() {
+        const content = document.getElementById('toc-content');
+        const arrow = document.querySelector('.toc-arrow');
+        const isOpen = content.style.display === 'block';
+        content.style.display = isOpen ? 'none' : 'block';
+        arrow.textContent = isOpen ? '▼' : '▲';
+      }
+      
+      function closeTOC() {
+        const content = document.getElementById('toc-content');
+        const arrow = document.querySelector('.toc-arrow');
+        content.style.display = 'none';
+        arrow.textContent = '▼';
+      }
+      
+      // Close TOC when clicking outside
+      document.addEventListener('click', function(event) {
+        const toc = document.querySelector('.toc-dropdown');
+        if (!toc.contains(event.target)) {
+          closeTOC();
+        }
+      });
+    </script>
 <p>這系列課程中的核心日語文法概念，涵蓋動詞與形容詞的分類、各種變化形式，以及普通體與丁寧體的區別。</p>
 <hr>
-<h2>1. 動詞分類</h2>
+<h2 id="heading-0">1. 動詞分類</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
 <table>
         <thead><tr>
 <th>類別</th>
@@ -336,7 +480,7 @@
 <td><span class="japanese">来る (くる)</span> - 來<br><span class="japanese">する</span> - 做<br><span class="japanese">勉強する (べんきょうする)</span> - 學習</td>
 </tr>
 </tbody>
-      </table><h3>例句</h3>
+      </table><h3 id="heading-1">例句</h3>
 <ul>
 <li><span class="japanese">100メートル泳ぐ (ひゃくメートルおよぐ)</span> - 游100公尺</li>
 <li><span class="japanese">急ぐ (いそぐ)</span> - 趕快 → <span class="japanese">急いでください (いそいでください)</span> - 請趕快</li>
@@ -345,7 +489,7 @@
 <li><span class="japanese">よく勉強してください (べんきょうしてください)</span> - 請好好學習</li>
 </ul>
 <hr>
-<h2>2. 形容詞分類</h2>
+<h2 id="heading-2">2. 形容詞分類</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
 <table>
         <thead><tr>
 <th>類別</th>
@@ -367,7 +511,7 @@
 <td><span class="japanese">需加「な」修飾名詞</span><br>例：<span class="japanese">便利 (べんり) な町 (まち)</span></td>
 </tr>
 </tbody>
-      </table><h3>例句</h3>
+      </table><h3 id="heading-3">例句</h3>
 <ul>
 <li><span class="japanese">その店 (みせ) は高くて (たかくて)、まずいです</span> - 那家店又貴又難吃</li>
 <li><span class="japanese">あの図書館 (としょかん) は本 (ほん) が少ない (すくない) です</span> - 那個圖書館書很少</li>
@@ -375,7 +519,7 @@
 <li><span class="japanese">自由 (じゆう) に服 (ふく) を選んで (えらんで) もいいです</span> - 可以自由選擇服裝</li>
 </ul>
 <hr>
-<h2>3. 動詞基本變化形 - 六大活用形</h2>
+<h2 id="heading-4">3. 動詞基本變化形 - 六大活用形</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
 <table>
         <thead><tr>
 <th>變化形</th>
@@ -429,7 +573,7 @@
 </tr>
 </tbody>
       </table><hr>
-<h2>4. 普通體與丁寧體</h2>
+<h2 id="heading-5">4. 普通體與丁寧體</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
 <table>
         <thead><tr>
 <th>詞性</th>
@@ -497,8 +641,8 @@
 </tr>
 </tbody>
       </table><hr>
-<h2>5. て形變化</h2>
-<h3>名詞・形容詞</h3>
+<h2 id="heading-6">5. て形變化</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
+<h3 id="heading-7">名詞・形容詞</h3>
 <table>
         <thead><tr>
 <th>詞性</th>
@@ -522,8 +666,8 @@
 <td><span class="japanese">その店 (みせ) は高くて (たかくて)、まずいです</span> - 那家店又貴又難吃</td>
 </tr>
 </tbody>
-      </table><h3>動詞て形變化</h3>
-<h4>第一類動詞（音便變化）</h4>
+      </table><h3 id="heading-8">動詞て形變化</h3>
+<h4 id="heading-9">第一類動詞（音便變化）</h4>
 <table>
         <thead><tr>
 <th>結尾</th>
@@ -558,7 +702,7 @@
 </tr>
 </tbody>
       </table><p><span class="japanese">例外：</span> <span class="japanese">行く (いく) → 行って (いって)</span></p>
-<h4>第二類・第三類動詞</h4>
+<h4 id="heading-10">第二類・第三類動詞</h4>
 <table>
         <thead><tr>
 <th>類別</th>
@@ -577,13 +721,13 @@
 <td><span class="japanese">来る (くる) → 来て (きて)</span><br><span class="japanese">する → して</span></td>
 </tr>
 </tbody>
-      </table><h3>て形接續例句</h3>
+      </table><h3 id="heading-11">て形接續例句</h3>
 <ul>
 <li><span class="japanese">朝五時 (あさごじ) に起きて (おきて)、埼玉 (さいたま) まで車 (くるま) で行って (いって)、八時 (はちじ) から授業 (じゅぎょう) を受けて (うけて)、夕方 (ゆうがた) 東京 (とうきょう) に戻りました (もどりました)</span> - 早上五點起床，開車到埼玉，從八點開始上課，傍晚回東京</li>
 </ul>
 <hr>
-<h2>6. 基本請求表現</h2>
-<h3>〜てください（禮貌的請求）</h3>
+<h2 id="heading-12">6. 基本請求表現</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
+<h3 id="heading-13">〜てください（禮貌的請求）</h3>
 <ul>
 <li><span class="japanese">見て (みて) ください</span> - 請看</li>
 <li><span class="japanese">聞いて (きいて) ください</span> - 請聽</li>
@@ -593,21 +737,21 @@
 <li><span class="japanese">閉めて (しめて) ください</span> - 請關上</li>
 <li><span class="japanese">消して (けして) ください</span> - 請關掉/熄滅</li>
 </ul>
-<h3>〜ないでください（請求不要做）</h3>
+<h3 id="heading-14">〜ないでください（請求不要做）</h3>
 <ul>
 <li><span class="japanese">写真 (しゃしん) を撮らない (とらない) でください</span> - 請不要拍照</li>
 <li><span class="japanese">書かない (かかない) でください</span> - 請不要寫</li>
 </ul>
 <hr>
-<h2>7. ている形用法</h2>
-<h3>進行動作</h3>
+<h2 id="heading-15">7. ている形用法</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
+<h3 id="heading-16">進行動作</h3>
 <p><span class="japanese">表示正在進行的動作（持續性動詞）</span></p>
 <ul>
 <li><span class="japanese">彼 (かれ) は居酒屋 (いざかや) でお酒 (さけ) を飲んでいます (のんでいます)</span> - 他正在居酒屋喝酒</li>
 <li><span class="japanese">お母さん (おかあさん) は掃除 (そうじ) しています</span> - 媽媽正在打掃</li>
 <li><span class="japanese">おばあさんはテレビを見ています (みています)</span> - 奶奶正在看電視</li>
 </ul>
-<h3>習慣・状態</h3>
+<h3 id="heading-17">習慣・状態</h3>
 <p><span class="japanese">表示習慣性動作或長期狀態（狀態性動詞）</span></p>
 <ul>
 <li><span class="japanese">姉 (あね) は大学 (だいがく) で英語 (えいご) を教えています (おしえています)</span> - 姊姊在大學教英文</li>
@@ -615,7 +759,7 @@
 <li><span class="japanese">AIは毎日 (まいにち) 使っています (つかっています)</span> - 每天都在使用AI</li>
 <li><span class="japanese">日曜日 (にちようび) に、一日中 (いちにちじゅう) 家 (いえ) でゴロゴロしていました</span> - 星期日整天在家懶洋洋地度過</li>
 </ul>
-<h3>結果状態</h3>
+<h3 id="heading-18">結果状態</h3>
 <p><span class="japanese">瞬間動詞+ている表示動作完成後的狀態</span></p>
 <ul>
 <li><span class="japanese">パソコンが壊れています (こわれています)</span> - 電腦壞了（處於壞掉的狀態）</li>
@@ -625,7 +769,7 @@
 <li><span class="japanese">かばんが開いています (あいています)</span> - 背包開著</li>
 <li><span class="japanese">鍵 (かぎ) がかかっています</span> - 門鎖鎖住了</li>
 </ul>
-<h3>否定用法</h3>
+<h3 id="heading-19">否定用法</h3>
 <p><span class="japanese">ていません表示狀態，ませんでした表示事實</span></p>
 <ul>
 <li><span class="japanese">電話 (でんわ) はしていません</span> - 我沒有打電話（狀態）</li>
@@ -633,7 +777,7 @@
 <li><span class="japanese">まだ食べていません (たべていません)</span> - 還沒吃（此時此刻是沒有吃的狀態）</li>
 <li><span class="japanese">また食べません (たべません)</span> - 還沒有要吃（等一下才要吃）</li>
 </ul>
-<h3>長期状態動詞</h3>
+<h3 id="heading-20">長期状態動詞</h3>
 <p><span class="japanese">住む、勤める、知る等必須用ている形</span></p>
 <ul>
 <li><span class="japanese">姉 (あね) は会社 (かいしゃ) に勤めています (つとめています)</span> - 姊姊在公司工作（正職/長期）</li>
@@ -642,8 +786,8 @@
 <li><span class="japanese">中国語 (ちゅうごくご) が分かっています (わかっています)</span> - 懂中文（已經學會了）</li>
 </ul>
 <hr>
-<h2>8. 可能形</h2>
-<h3>變化規則</h3>
+<h2 id="heading-21">8. 可能形</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
+<h3 id="heading-22">變化規則</h3>
 <table>
         <thead><tr>
 <th>動詞類型</th>
@@ -667,7 +811,7 @@
 <td><span class="japanese">日本語 (にほんご) ができる</span> - 會日語<br><span class="japanese">運転 (うんてん) ができる</span> - 會開車</td>
 </tr>
 </tbody>
-      </table><h3>特殊動詞</h3>
+      </table><h3 id="heading-23">特殊動詞</h3>
 <p><span class="japanese">天生能力 vs 條件許可</span></p>
 <ul>
 <li><span class="japanese">富士山 (ふじさん) が見える (みえる)</span> - 看得到富士山（天生能力）</li>
@@ -675,7 +819,7 @@
 <li><span class="japanese">音楽 (おんがく) が聞こえる (きこえる)</span> - 聽得到音樂（天生能力）</li>
 <li><span class="japanese">ラジオが聞ける (きける)</span> - 能聽收音機（條件許可）</li>
 </ul>
-<h3>更多例句</h3>
+<h3 id="heading-24">更多例句</h3>
 <ul>
 <li><span class="japanese">来年 (らいねん) アメリカへ行ける (いける)</span> - 明年能去美國</li>
 <li><span class="japanese">絵 (え) がかける</span> - 會畫畫</li>
@@ -683,8 +827,8 @@
 <li><span class="japanese">自転車 (じてんしゃ) に乗れる (のれる)</span> - 會騎腳踏車</li>
 </ul>
 <hr>
-<h2>9. 許可・禁止表現</h2>
-<h3>〜てもいいですか（詢問許可）</h3>
+<h2 id="heading-25">9. 許可・禁止表現</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
+<h3 id="heading-26">〜てもいいですか（詢問許可）</h3>
 <ul>
 <li><span class="japanese">ここで写真 (しゃしん) を撮って (とって) もいいですか</span> - 可以在這裡拍照嗎？</li>
 <li><span class="japanese">ここに座って (すわって) もいいですか</span> - 可以坐在這裡嗎？</li>
@@ -694,20 +838,20 @@
 <li><span class="japanese">あした少し (すこし) 授業 (じゅぎょう) に遅れて (おくれて) もいいですか</span> - 明天上課稍微遲到一下可以嗎？</li>
 <li><span class="japanese">休憩時間 (きゅうけいじかん) にコーヒーを飲んで (のんで) もいいです</span> - 休息時間可以喝咖啡</li>
 </ul>
-<h4>回答方式</h4>
+<h4 id="heading-27">回答方式</h4>
 <ul>
 <li><span class="japanese">いいです</span> - 可以</li>
 <li><span class="japanese">構いません (かまいません)</span> - 沒關係</li>
 <li><span class="japanese">大丈夫です (だいじょうぶです)</span> - 沒問題</li>
 </ul>
-<h3>〜てはいけません（禁止）</h3>
+<h3 id="heading-28">〜てはいけません（禁止）</h3>
 <ul>
 <li><span class="japanese">写真 (しゃしん) を撮って (とって) はいけません</span> - 不准拍照</li>
 <li><span class="japanese">夜遅く (よるおそく) まで大きな (おおきな) 音 (おと) を出して (だして) はいけません</span> - 不可以到很晚還發出很大的聲音</li>
 <li><span class="japanese">会議中 (かいぎちゅう) に食べて (たべて) はいけません</span> - 會議中不可以吃東西</li>
 <li><span class="japanese">学校 (がっこう) を休んで (やすんで) はいけません</span> - 不可以翹課</li>
 </ul>
-<h3>〜なくてもいい（不做也可以）</h3>
+<h3 id="heading-29">〜なくてもいい（不做也可以）</h3>
 <ul>
 <li><span class="japanese">急がなくて (いそがなくて) もいい</span> - 不用趕也沒關係</li>
 <li><span class="japanese">行かなくて (いかなくて) もプレゼントがもらえる</span> - 就算不去也可以得到禮物</li>
@@ -718,8 +862,8 @@
 <li><span class="japanese">日本語 (にほんご) が分からなくて (わからなくて) も大丈夫です (だいじょうぶです)</span> - 即使不懂日語也沒關係</li>
 </ul>
 <hr>
-<h2>10. 授受表現</h2>
-<h3>あげる（我/內團體→他人/外團體）</h3>
+<h2 id="heading-30">10. 授受表現</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
+<h3 id="heading-31">あげる（我/內團體→他人/外團體）</h3>
 <p><span class="japanese">給予（別人受惠）</span></p>
 <ul>
 <li><span class="japanese">友達 (ともだち) におみやげをあげました</span> - 送紀念品給朋友</li>
@@ -729,14 +873,14 @@
 <li><span class="japanese">わたしは母 (はは) を京都 (きょうと) へ連れて行って (つれていって) あげました</span> - 我帶媽媽去京都</li>
 <li><span class="japanese">祐介 (ゆうすけ) さんはおじさんの荷物 (にもつ) を持って (もって) あげました</span> - 祐介幫叔叔拿行李</li>
 </ul>
-<h3>くれる（他人/外團體→我/內團體）</h3>
+<h3 id="heading-32">くれる（他人/外團體→我/內團體）</h3>
 <p><span class="japanese">給予（我受惠）</span></p>
 <ul>
 <li><span class="japanese">友達 (ともだち) は私 (わたし) におみやげをくれました</span> - 朋友送紀念品給我</li>
 <li><span class="japanese">友達 (ともだち) が宿題 (しゅくだい) を見て (みて) くれた</span> - 朋友幫我看了作業</li>
 <li><span class="japanese">しあわせにしてあげてくれよな</span> - 請你讓她幸福</li>
 </ul>
-<h3>もらう（我←他人）</h3>
+<h3 id="heading-33">もらう（我←他人）</h3>
 <p><span class="japanese">接受（我主動得到）</span></p>
 <ul>
 <li><span class="japanese">私 (わたし) は友達 (ともだち) におみやげをもらいました</span> - 我從朋友那裡得到紀念品</li>
@@ -744,7 +888,7 @@
 <li><span class="japanese">クラスメートで一番 (いちばん) おもしろい田中 (たなか) さんに元気 (げんき) が出る (でる) 話 (はなし) をしてもらいます</span> - 請班上最有趣的田中同學講讓人振奮的話</li>
 <li><span class="japanese">母 (はは) においしい物 (もの) を作って (つくって) もらいます</span> - 請媽媽做好吃的東西</li>
 </ul>
-<h3>動詞+てもらう（我請別人做動作）</h3>
+<h3 id="heading-34">動詞+てもらう（我請別人做動作）</h3>
 <ul>
 <li><span class="japanese">ここにサインしてもらってもいいですか</span> - 可以請您在這裡簽名嗎？</li>
 <li><span class="japanese">見て (みて) もらう</span> - 請別人看；<span class="japanese">見せて (みせて) もらう</span> - 請別人出示給我看</li>
@@ -752,28 +896,28 @@
 <li><span class="japanese">見てもらってください</span> - 請你請某人看…</li>
 </ul>
 <hr>
-<h2>11. のだ/んです用法</h2>
-<h3>説明・原因</h3>
+<h2 id="heading-35">11. のだ/んです用法</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
+<h3 id="heading-36">説明・原因</h3>
 <p><span class="japanese">說明原因理由、強調背景</span></p>
 <ul>
 <li><span class="japanese">車 (くるま) が故障 (こしょう) したんです</span> - 車子故障了（所以搭電車來）</li>
 <li><span class="japanese">これから会議 (かいぎ) なんですけど、先に失礼 (しつれい) しますね</span> - 因為等下要開會，所以我先走了</li>
 <li><span class="japanese">妻 (つま) の携帯 (けいたい) に警察 (けいさつ) から電話 (でんわ) があったんです</span> - 警察打電話到我太太的手機</li>
 </ul>
-<h3>確認・質問</h3>
+<h3 id="heading-37">確認・質問</h3>
 <p><span class="japanese">觀察到跡象後想確認</span></p>
 <ul>
 <li><span class="japanese">寒い (さむい) んですか</span> - 你是會冷嗎？（觀察到對方的狀況）</li>
 <li><span class="japanese">これ、どうやって開ける (あける) の？</span> - 這個怎麼打開？（想知道方法）</li>
 <li><span class="japanese">刷不出去 (だしふできない) んですが…</span> - 刷不出去（需要協助的狀況）</li>
 </ul>
-<h3>強調</h3>
+<h3 id="heading-38">強調</h3>
 <p><span class="japanese">強調事情的重要性</span></p>
 <ul>
 <li><span class="japanese">のだ + ですが/けど</span> - 不是「雖然…但是…」而是強調背景的用法</li>
 </ul>
 <hr>
-<h2>12. 假設語氣</h2>
+<h2 id="heading-39">12. 假設語氣</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
 <table>
         <thead><tr>
 <th>句型</th>
@@ -813,14 +957,14 @@
 <td><span class="japanese">帰らなくては (かえらなくては) 間に合わない (まにあわない)</span> - 如果不回去的話，就來不及了</td>
 </tr>
 </tbody>
-      </table><h3>更多なくては例句</h3>
+      </table><h3 id="heading-40">更多なくては例句</h3>
 <ul>
 <li><span class="japanese">教えなくて (おしえなくて) はAさんが危ない (あぶない)</span> - 如果不告訴A先生的話，他可能會遇到麻煩</li>
 <li><span class="japanese">出さなくて (ださなくて) は零点 (れいてん) になる</span> - 如果不交的話，會得零分</li>
 </ul>
 <hr>
-<h2>13. 命令形・意志形</h2>
-<h3>變化規則</h3>
+<h2 id="heading-41">13. 命令形・意志形</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
+<h3 id="heading-42">變化規則</h3>
 <table>
         <thead><tr>
 <th>動詞類型</th>
@@ -848,8 +992,8 @@
 <td>不規則</td>
 </tr>
 </tbody>
-      </table><h3>具體例句</h3>
-<h4>第一類動詞</h4>
+      </table><h3 id="heading-43">具體例句</h3>
+<h4 id="heading-44">第一類動詞</h4>
 <ul>
 <li><span class="japanese">書く (かく) → 書け (かけ) → 書くな (かくな) → 書こう (かこう)</span></li>
 <li><span class="japanese">止まる (とまる) → 止まれ (とまれ)</span> - 停下來（交通標誌）</li>
@@ -859,18 +1003,18 @@
 <li><span class="japanese">休む (やすむ) → 休め (やすめ) → 休むな (やすむな) → 休もう (やすもう)</span></li>
 <li><span class="japanese">遊ぶ (あそぶ) → 遊べ (あそべ) → 遊ぶな (あそぶな) → 遊ぼう (あそぼう)</span></li>
 </ul>
-<h4>第二類動詞</h4>
+<h4 id="heading-45">第二類動詞</h4>
 <ul>
 <li><span class="japanese">見る (みる) → 見ろ (みろ) → 見るな (みるな) → 見よう (みよう)</span></li>
 <li><span class="japanese">食べる (たべる) → 食べろ (たべろ) → 食べるな (たべるな) → 食べよう (たべよう)</span></li>
 <li><span class="japanese">入る (はいる) → 入れ (はいれ) → 入るな (はいるな) → 入ろう (はいろう)</span></li>
 </ul>
-<h4>第三類動詞</h4>
+<h4 id="heading-46">第三類動詞</h4>
 <ul>
 <li><span class="japanese">する → しろ → するな → しよう</span></li>
 <li><span class="japanese">来る (くる) → こい → 来るな (くるな) → こよう</span></li>
 </ul>
-<h3>意志形例句（表示決心或邀請）</h3>
+<h3 id="heading-47">意志形例句（表示決心或邀請）</h3>
 <ul>
 <li><span class="japanese">スマホと歩いて (あるいて)、プレゼントをもらおう</span> - 一邊走路一邊玩手機來得到禮物</li>
 <li><span class="japanese">たばこ・たき火 (び) はよく消そう (けそう)</span> - 香菸和營火要徹底熄滅</li>
@@ -878,8 +1022,8 @@
 <li><span class="japanese">乗りましょう (のりましょう)</span>（丁寧體）→ <span class="japanese">乗ろう (のろう)</span>（普通體）- 坐吧</li>
 </ul>
 <hr>
-<h2>14. 補充重要文法</h2>
-<h3>着用動詞</h3>
+<h2 id="heading-48">14. 補充重要文法</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
+<h3 id="heading-49">着用動詞</h3>
 <p><span class="japanese">穿戴相關動詞的區別</span></p>
 <ul>
 <li><span class="japanese">着る (きる)</span> - 穿（上半身，從頭套下來的）</li>
@@ -895,7 +1039,7 @@
 <li><span class="japanese">過去式</span> → 穿/戴的過程結束</li>
 <li><span class="japanese">してる</span> → 穿/戴的過程結束所呈現的狀態</li>
 </ul>
-<h3>助詞用法</h3>
+<h3 id="heading-50">助詞用法</h3>
 <p><span class="japanese">重要助詞的使用區別</span></p>
 <ul>
 <li><span class="japanese">で</span> - 動作發生的地點：<span class="japanese">図書館 (としょかん) で勉強 (べんきょう) します</span></li>
@@ -905,7 +1049,7 @@
 <li><span class="japanese">に</span> - 移動目的：<span class="japanese">映画 (えいが) を見に (みに) 行きます (いきます)</span></li>
 <li><span class="japanese">で</span> - 手段・工具：<span class="japanese">車 (くるま) で行きます (いきます)</span></li>
 </ul>
-<h3>時間表現</h3>
+<h3 id="heading-51">時間表現</h3>
 <p><span class="japanese">各種時間相關用法</span></p>
 <ul>
 <li><span class="japanese">朝五時 (あさごじ) に</span> - 在早上五點</li>
@@ -917,7 +1061,7 @@
 <li><span class="japanese">先に</span> - 先、接下來</li>
 <li><span class="japanese">さっき</span> - 剛才</li>
 </ul>
-<h3>複合動詞</h3>
+<h3 id="heading-52">複合動詞</h3>
 <p><span class="japanese">由多個動詞組成的複合動詞</span></p>
 <ul>
 <li><span class="japanese">間に合う (まにあう)</span> - 來得及</li>
@@ -927,19 +1071,19 @@
 <li><span class="japanese">戻る (もどる)</span> - 回去（會再回來原地）</li>
 <li><span class="japanese">帰る (かえる)</span> - 回家/離開現在的地方</li>
 </ul>
-<h3>でから / ながら</h3>
+<h3 id="heading-53">でから / ながら</h3>
 <p><span class="japanese">動作的時間關係</span></p>
-<h4>でから：時間先後順序</h4>
+<h4 id="heading-54">でから：時間先後順序</h4>
 <ul>
 <li><span class="japanese">コーヒーを飲んで (のんで) から授業 (じゅぎょう) を受けます (うけます)</span> - 喝完咖啡後上課</li>
 </ul>
-<h4>ながら：同時進行動作</h4>
+<h4 id="heading-55">ながら：同時進行動作</h4>
 <ul>
 <li><span class="japanese">お茶 (ちゃ) を飲み (のみ) ながらテレビを見ます (みます)</span> - 一邊喝茶一邊看電視</li>
 <li><span class="japanese">ながらの變化：V ます形去掉ます + ながら</span></li>
 <li><span class="japanese">飲みます → 飲み + ながら</span></li>
 </ul>
-<h3>動詞意義區別</h3>
+<h3 id="heading-56">動詞意義區別</h3>
 <p><span class="japanese">意思相近但用法不同的動詞</span></p>
 <ul>
 <li><span class="japanese">見る (みる)</span> - 看（自己決定）vs <span class="japanese">見せる (みせる)</span> - 出示給別人看</li>
@@ -949,7 +1093,7 @@
 <li><span class="japanese">借りる (かりる)</span> - 借用 vs <span class="japanese">貸す (かす)</span> - 借出</li>
 <li><span class="japanese">取る (とる)</span> - 用手拿 vs <span class="japanese">もらう</span> - 得到（要跟某人要）</li>
 </ul>
-<h3>特殊用法</h3>
+<h3 id="heading-57">特殊用法</h3>
 <p><span class="japanese">一些特殊的日語表達</span></p>
 <ul>
 <li><span class="japanese">いってきます</span> - 我出去了（出門時說）</li>
@@ -960,7 +1104,7 @@
 <li><span class="japanese">掛ける (かける)</span> - 掛上去、蓋棉被、打電話</li>
 </ul>
 <hr>
-<h2>學習要點</h2>
+<h2 id="heading-58">學習要點</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
 <ul>
 <li><span class="japanese">學習順序</span>：名詞 → 形容詞 → 動詞 → 複雜句型</li>
 <li><span class="japanese">動詞變化 + 句型 = 新詞彙</span>：理解動詞變化並與不同句型結合是關鍵</li>
@@ -970,7 +1114,7 @@
 <li><span class="japanese">語境敏感性</span>：普通體用於親近的人，丁寧體用於正式場合</li>
 <li><span class="japanese">音便變化</span>：て形變化中的音韻變化是為了發音方便</li>
 </ul>
-<h2>常見錯誤提醒</h2>
+<h2 id="heading-59">常見錯誤提醒</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
 <ul>
 <li><span class="japanese">な形容詞修飾名詞</span>：一定要加「な」，不能用「の」（便利の町 ✗ → 便利な町 ✓）</li>
 <li><span class="japanese">可能形助詞</span>：「を」要改成「が」（日本語を話せる ✗ → 日本語が話せる ✓）</li>
@@ -980,7 +1124,7 @@
 <li><span class="japanese">動詞分類</span>：要正確判斷動詞是第一類、第二類還是第三類</li>
 <li><span class="japanese">音便變化</span>：第一類動詞的て形變化要注意音便規則</li>
 </ul>
-<h2>文法學習策略</h2>
+<h2 id="heading-60">文法學習策略</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
 <ul>
 <li><span class="japanese">先理解概念再記例句</span>：理解文法概念後，多背例句來內化用法</li>
 <li><span class="japanese">從簡單句型開始</span>：先掌握基本的てください、ています等句型</li>
@@ -990,7 +1134,7 @@
 <li><span class="japanese">聽說讀寫並進</span>：不只是理解，更要能實際運用</li>
 </ul>
 <hr>
-<h2>總結</h2>
+<h2 id="heading-61">總結</h2><div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>
 <p>這份文法整理涵蓋了日語學習的核心內容，從基礎的動詞分類到複雜的授受表現，每個概念都配有豐富的例句。建議學習者：</p>
 <ol>
 <li><span class="japanese">循序漸進</span>：按照章節順序學習，先打好基礎</li>

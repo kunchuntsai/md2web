@@ -62,9 +62,13 @@ class Converter {
       const html = await fs.readFile(htmlPath, 'utf8');
       const $ = cheerio.load(html);
       
+      // Extract head content but remove title tag to avoid duplication
+      const headClone = $('head').clone();
+      headClone.find('title').remove();
+      
       // Extract template structure
       const template = {
-        head: $('head').html() || '',
+        head: headClone.html() || '',
         title: $('title').text() || 'Generated Document',
         styles: $('style').html() || '',
         externalStyles: [],
@@ -99,7 +103,7 @@ class Converter {
     }
     
     return {
-      head: '<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">',
+      head: '<meta charset="UTF-8">\n    <meta name="viewport" content="width=device-width, initial-scale=1.0">',
       title: 'Generated Document',
       styles: `
         body {
@@ -152,6 +156,114 @@ class Converter {
           border-radius: 4px;
           margin: 5px 0;
           border-left: 4px solid #28a745;
+        }
+        .toc-dropdown {
+          position: relative;
+          display: inline-block;
+          margin: 20px 0 30px 0;
+        }
+        .toc-toggle {
+          background: linear-gradient(135deg, #4a90e2, #357abd);
+          color: white;
+          border: none;
+          padding: 12px 20px;
+          font-size: 16px;
+          border-radius: 8px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          box-shadow: 0 2px 10px rgba(74, 144, 226, 0.3);
+          transition: all 0.3s ease;
+          font-family: inherit;
+        }
+        .toc-toggle:hover {
+          background: linear-gradient(135deg, #357abd, #2968a3);
+          box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+          transform: translateY(-1px);
+        }
+        .toc-toggle:active {
+          transform: translateY(0);
+          box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+        }
+        .toc-icon {
+          font-size: 18px;
+          font-weight: bold;
+        }
+        .toc-arrow {
+          margin-left: auto;
+          transition: transform 0.3s ease;
+        }
+        .toc-content {
+          display: none;
+          position: absolute;
+          background-color: white;
+          min-width: 350px;
+          max-width: 500px;
+          max-height: 400px;
+          overflow-y: auto;
+          box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+          z-index: 1000;
+          border-radius: 8px;
+          border: 1px solid #e1e5e9;
+          margin-top: 5px;
+        }
+        .toc-content ul {
+          list-style-type: none;
+          padding: 10px 0;
+          margin: 0;
+        }
+        .toc-content ul ul {
+          padding-left: 20px;
+        }
+        .toc-content li {
+          margin: 0;
+        }
+        .toc-content a {
+          text-decoration: none;
+          color: #495057;
+          font-size: 14px;
+          line-height: 1.4;
+          display: block;
+          padding: 8px 20px;
+          transition: all 0.2s ease;
+          border-left: 3px solid transparent;
+        }
+        .toc-content a:hover {
+          background-color: #f8f9fa;
+          color: #007bff;
+          border-left-color: #007bff;
+        }
+        .toc-content ul ul a {
+          padding-left: 40px;
+          font-size: 13px;
+          color: #6c757d;
+        }
+        @media (max-width: 768px) {
+          .toc-content {
+            min-width: 300px;
+            max-width: calc(100vw - 40px);
+          }
+        }
+        .back-to-top {
+          text-align: right;
+          margin: 10px 0 20px 0;
+          font-size: 12px;
+        }
+        .back-to-top a {
+          color: #6c757d;
+          text-decoration: none;
+          padding: 5px 10px;
+          border: 1px solid #dee2e6;
+          border-radius: 4px;
+          background-color: #f8f9fa;
+          transition: all 0.3s ease;
+        }
+        .back-to-top a:hover {
+          color: #495057;
+          background-color: #e9ecef;
+          border-color: #adb5bd;
+          text-decoration: none;
         }
       `,
       externalStyles: [],
@@ -255,14 +367,236 @@ class Converter {
     }
   }
 
+  generateTOC(content) {
+    const headings = [];
+    const headingRegex = /<h([2-6])[^>]*>(.*?)<\/h[2-6]>/g;
+    let match;
+    let counter = 0;
+
+    // Extract headings and add IDs with back-to-top links
+    let processedContent = content.replace(headingRegex, (match, level, text) => {
+      const cleanText = text.replace(/<[^>]*>/g, '');
+      const id = `heading-${counter++}`;
+      const levelNum = parseInt(level);
+      
+      // Only include H2 and H3 in TOC
+      if (levelNum <= 3) {
+        headings.push({ level: levelNum, text: cleanText, id });
+      }
+      
+      // Add back-to-top link for H2 headings (main sections)
+      const backToTop = levelNum === 2 ? 
+        `<div class="back-to-top"><a href="javascript:void(0)" onclick="document.querySelector('.toc-toggle').scrollIntoView(); toggleTOC();">↑ 返回目錄 / Back to TOC</a></div>` : '';
+      
+      return match.replace(/^<h(\d)/, `<h$1 id="${id}"`) + backToTop;
+    });
+
+    if (headings.length === 0) {
+      return { toc: '', content: processedContent };
+    }
+
+    // Generate TOC HTML as dropdown menu
+    let tocHtml = `
+    <div class="toc-dropdown">
+      <button class="toc-toggle" onclick="toggleTOC()">
+        <span class="toc-icon">☰</span>
+        目錄 / Table of Contents
+        <span class="toc-arrow">▼</span>
+      </button>
+      <div class="toc-content" id="toc-content">
+        <ul>`;
+    
+    let currentLevel = 2;
+
+    headings.forEach(heading => {
+      if (heading.level > currentLevel) {
+        // Open nested lists
+        for (let i = currentLevel; i < heading.level; i++) {
+          tocHtml += '<ul>';
+        }
+      } else if (heading.level < currentLevel) {
+        // Close nested lists
+        for (let i = heading.level; i < currentLevel; i++) {
+          tocHtml += '</ul>';
+        }
+      }
+      
+      tocHtml += `<li><a href="#${heading.id}" onclick="closeTOC()">${heading.text}</a></li>`;
+      currentLevel = heading.level;
+    });
+
+    // Close remaining lists
+    for (let i = 2; i <= currentLevel; i++) {
+      tocHtml += '</ul>';
+    }
+    
+    tocHtml += `
+        </ul>
+      </div>
+    </div>
+    <script>
+      function toggleTOC() {
+        const content = document.getElementById('toc-content');
+        const arrow = document.querySelector('.toc-arrow');
+        const isOpen = content.style.display === 'block';
+        content.style.display = isOpen ? 'none' : 'block';
+        arrow.textContent = isOpen ? '▼' : '▲';
+      }
+      
+      function closeTOC() {
+        const content = document.getElementById('toc-content');
+        const arrow = document.querySelector('.toc-arrow');
+        content.style.display = 'none';
+        arrow.textContent = '▼';
+      }
+      
+      // Close TOC when clicking outside
+      document.addEventListener('click', function(event) {
+        const toc = document.querySelector('.toc-dropdown');
+        if (!toc.contains(event.target)) {
+          closeTOC();
+        }
+      });
+    </script>`;
+
+    return { toc: tocHtml, content: processedContent };
+  }
+
   applyTemplate(content, template, metadata = {}) {
-    const title = metadata.title || template.title || 'Generated Document';
+    // Generate TOC and process content
+    const { toc, content: processedContent } = this.generateTOC(content);
+    
+    // Extract title from first H1 heading if not in metadata
+    let title = metadata.title;
+    if (!title) {
+      const h1Match = processedContent.match(/<h1[^>]*>(.*?)<\/h1>/);
+      if (h1Match) {
+        // Remove any HTML tags from the title
+        title = h1Match[1].replace(/<[^>]*>/g, '');
+      } else {
+        title = template.title || 'Generated Document';
+      }
+    }
     
     const externalLinks = template.externalStyles.map(href => 
       `<link rel="stylesheet" href="${href}">`
     ).join('\n    ');
 
-    const styles = template.styles ? `<style>\n${template.styles}\n    </style>` : '';
+    const tocStyles = `
+        .toc-dropdown {
+            position: relative;
+            display: inline-block;
+            margin: 20px 0 30px 0;
+        }
+        .toc-toggle {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 2px 10px rgba(74, 144, 226, 0.3);
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+        .toc-toggle:hover {
+            background: linear-gradient(135deg, #357abd, #2968a3);
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
+            transform: translateY(-1px);
+        }
+        .toc-toggle:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 8px rgba(74, 144, 226, 0.3);
+        }
+        .toc-icon {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .toc-arrow {
+            margin-left: auto;
+            transition: transform 0.3s ease;
+        }
+        .toc-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            min-width: 350px;
+            max-width: 500px;
+            max-height: 400px;
+            overflow-y: auto;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            z-index: 1000;
+            border-radius: 8px;
+            border: 1px solid #e1e5e9;
+            margin-top: 5px;
+        }
+        .toc-content ul {
+            list-style-type: none;
+            padding: 10px 0;
+            margin: 0;
+        }
+        .toc-content ul ul {
+            padding-left: 20px;
+        }
+        .toc-content li {
+            margin: 0;
+        }
+        .toc-content a {
+            text-decoration: none;
+            color: #495057;
+            font-size: 14px;
+            line-height: 1.4;
+            display: block;
+            padding: 8px 20px;
+            transition: all 0.2s ease;
+            border-left: 3px solid transparent;
+        }
+        .toc-content a:hover {
+            background-color: #f8f9fa;
+            color: #007bff;
+            border-left-color: #007bff;
+        }
+        .toc-content ul ul a {
+            padding-left: 40px;
+            font-size: 13px;
+            color: #6c757d;
+        }
+        @media (max-width: 768px) {
+            .toc-content {
+                min-width: 300px;
+                max-width: calc(100vw - 40px);
+            }
+        }
+        .back-to-top {
+            text-align: right;
+            margin: 10px 0 20px 0;
+            font-size: 12px;
+        }
+        .back-to-top a {
+            color: #6c757d;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            background-color: #f8f9fa;
+            transition: all 0.3s ease;
+        }
+        .back-to-top a:hover {
+            color: #495057;
+            background-color: #e9ecef;
+            border-color: #adb5bd;
+            text-decoration: none;
+        }`;
+
+    const allStyles = template.styles + tocStyles;
+    const styles = allStyles ? `<style>\n${allStyles}\n    </style>` : '';
+
+    // Insert TOC after the first H1 heading
+    const contentWithToc = toc ? processedContent.replace(/(<h1[^>]*>.*?<\/h1>)/, `$1\n${toc}`) : processedContent;
 
     return `<!DOCTYPE html>
 <html lang="${metadata.lang || 'zh-TW'}">
@@ -274,7 +608,7 @@ class Converter {
 </head>
 <body${template.bodyClass ? ` class="${template.bodyClass}"` : ''}>
     <div class="${template.containerClass}">
-        ${content}
+        ${contentWithToc}
     </div>
 </body>
 </html>`;
